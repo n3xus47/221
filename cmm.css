@@ -33,7 +33,7 @@ body {
     display: flex;
     gap: 15px;
     padding: 15px;
-    background: black;
+    background: #888888;
     border: 3px solid white;
     border-radius: 25px;
 }
@@ -41,7 +41,7 @@ body {
 .nav a {
     text-decoration: none;
     padding: 15px 25px;
-    background: black;
+    background: #888888;
     color: white;
     border-radius: 25px;
     font-size: 22px;
@@ -114,8 +114,9 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 .copy-button:hover {
-    color: #f4d03f;
+    color: #cccccc;
 }
