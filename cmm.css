@@ -36,10 +36,9 @@ body {
     background: black;
     border: 3px solid white;
     border-radius: 25px;
-    box-shadow: 4px 4px 0px black, 8px 8px 0px #8b5a2b;
 }
 
-.nav a, .contact .nav-button {
+.nav a {
     text-decoration: none;
     padding: 15px 25px;
     background: black;
@@ -55,7 +54,7 @@ body {
     border: 3px solid white;
 }
 
-.nav a:hover, .contact .nav-button:hover {
+.nav a:hover {
     color: black;
     background-color: white;
     transition: all 0.3s ease-in-out;
@@ -100,6 +99,12 @@ body {
     gap: 10px;
 }
 
+.contact-email {
+    font-size: 20px;
+    color: white;
+    font-family: "Playfair Display", serif;
+}
+
 .copy-button {
     background: black;
     color: white;
@@ -119,4 +124,3 @@ body {
     background: white;
     color: black;
 }
-
