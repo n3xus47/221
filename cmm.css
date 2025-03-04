@@ -124,15 +124,19 @@ body {
     color: black;
 }
 
-/* Styl dla kursora noża */
+/* Styl dla białego kursora noża */
 .custom-cursor {
     position: fixed;
     width: 32px;
     height: 32px;
-    background: url('knife_cursor.cur') no-repeat center;
+    background: url('knife_cursor_white.png') no-repeat center;
     background-size: contain;
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: transform 0.1s linear;
     z-index: 9999;
+}
+
+a, button {
+    cursor: none !important;
 }
