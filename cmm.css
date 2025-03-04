@@ -1,6 +1,6 @@
 body {
     background-color: #121212;
-    font-family: "Anton", sans-serif;
+    font-family: "Playfair Display", serif;
     font-weight: 600;
     font-style: normal;
     margin: 0;
@@ -60,7 +60,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 22px;
-    font-family: "Anton", sans-serif;
+    font-family: "Playfair Display", serif;
     transition: color 0.3s ease-in-out;
 }
 
@@ -72,13 +72,9 @@ body {
     display: flex;
 }
 
-.unifrakturcook-bold {
-    font-family: "Anton", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
+/* Styl gotycki dla C.M.M */
 .title {
+    font-family: "UnifrakturMaguntia", cursive;
     font-size: 150px;  
     font-weight: 700;
     text-decoration: none;
@@ -93,7 +89,9 @@ body {
     background: transparent !important;
 }
 
-.subtitle {
+/* Styl luksusowy dla reszty tekstu */
+.subtitle, .menu a, .contact-email {
+    font-family: "Playfair Display", serif;
     font-size: 90px; 
     font-weight: 700;
     letter-spacing: 3px; 
@@ -112,7 +110,6 @@ body {
 .contact-email {
     font-size: 20px;
     color: white;
-    font-family: "Anton", sans-serif;
 }
 
 .copy-button {
