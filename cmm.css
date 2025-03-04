@@ -1,5 +1,5 @@
 body {
-    background-color: #2e2e2e;
+    background-color: #121212;
     font-family: "Playfair Display", serif;
     font-weight: 600;
     font-style: normal;
@@ -14,7 +14,7 @@ body {
     opacity: 0;
     animation: fadeIn 2s forwards;
     transition: background-color 0.5s ease-in-out;
-    cursor: url("knife_cursor.cur"), auto;
+    cursor: none; /* Ukrywamy domyślny kursor */
 }
 
 @keyframes fadeIn {
@@ -122,4 +122,17 @@ body {
 .copy-button:hover {
     background: white;
     color: black;
+}
+
+/* Styl dla kursora noża */
+.custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background: url('knife_cursor.cur') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+    z-index: 9999;
 }
