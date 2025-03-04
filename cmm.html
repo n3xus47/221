@@ -16,40 +16,55 @@
     </script>
 </head>
 <body>
-    <div class="nav">
+
+    <!-- Menu Hamburgerowe -->
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu">
         <a href="index.html">221</a>
         <a href="holy-five.html">Holy Five</a>
         <a href="cmm.html">C.M.M</a>
     </div>
 
-    <a href="https://www.youtube.com/channel/UCPFOid1HxzwWMg9JT_HQuMw" target="_blank" class="title unifrakturcook-bold" onmouseover="document.body.classList.add('color-change')" onmouseout="document.body.classList.remove('color-change')">C.M.M</a>
+    <!-- Tytuł Strony -->
+    <a href="https://www.youtube.com/channel/UCPFOid1HxzwWMg9JT_HQuMw" target="_blank" class="title unifrakturcook-bold" 
+        onmouseover="document.body.classList.add('color-change')" 
+        onmouseout="document.body.classList.remove('color-change')">
+        C.M.M
+    </a>
     <div class="subtitle unifrakturcook-bold">CocoMadMovement</div>
 
+    <!-- Kontakt -->
     <footer class="contact">
         <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
         <button class="copy-button" onclick="copyEmail()">📋</button>
     </footer>
     
+    <!-- Skrypt -->
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    let cursor = document.createElement("div");
-    cursor.classList.add("custom-cursor");
-    document.body.appendChild(cursor);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dodanie kursora noża
+            let cursor = document.createElement("div");
+            cursor.classList.add("custom-cursor");
+            document.body.appendChild(cursor);
 
-    document.addEventListener("mousemove", function(e) {
-        cursor.style.left = e.pageX + "px";
-        cursor.style.top = e.pageY + "px";
-    });
-});
+            document.addEventListener("mousemove", function(e) {
+                cursor.style.left = e.pageX + "px";
+                cursor.style.top = e.pageY + "px";
+            });
 
-document.addEventListener("DOMContentLoaded", function() {
-    let menuToggle = document.querySelector(".menu-toggle");
-    let menu = document.querySelector(".menu");
+            // Menu hamburgerowe
+            let menuToggle = document.querySelector(".menu-toggle");
+            let menu = document.querySelector(".menu");
 
-    menuToggle.addEventListener("click", function() {
-        menu.classList.toggle("active");
-    });
-});
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+            });
+        });
     </script>
 
 </body>
