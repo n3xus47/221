@@ -41,6 +41,15 @@ document.addEventListener("DOMContentLoaded", function() {
         cursor.style.top = e.pageY + "px";
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let menuToggle = document.querySelector(".menu-toggle");
+    let menu = document.querySelector(".menu");
+
+    menuToggle.addEventListener("click", function() {
+        menu.classList.toggle("active");
+    });
+});
     </script>
 
 </body>
