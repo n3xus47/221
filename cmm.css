@@ -17,13 +17,10 @@ body {
     cursor: none; /* Ukrywamy domyślny kursor */
 }
 
+/* Efekt fade-in */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-.color-change {
-    background-color: #7d4f34 !important;
 }
 
 /* Styl dla menu hamburgerowego */
@@ -46,6 +43,7 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/* Styl dla rozwijanego menu */
 .menu {
     position: absolute;
     top: 60px;
@@ -151,9 +149,7 @@ body {
     z-index: 9999;
 }
 
+/* Wyłączenie zmiany kursora na rączkę */
 a, button {
-    cursor: none !important;
-}
-
     cursor: none !important;
 }
