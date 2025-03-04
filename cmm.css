@@ -106,21 +106,16 @@ body {
 }
 
 .copy-button {
-    background: black;
-    color: white;
-    border: 3px solid white;
-    border-radius: 50%;
-    font-size: 18px;
-    width: 40px;
-    height: 40px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    color: white;
 }
 
 .copy-button:hover {
-    background: white;
-    color: black;
+    color: #f4d03f;
 }
