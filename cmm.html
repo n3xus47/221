@@ -29,5 +29,19 @@
         <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
         <button class="copy-button" onclick="copyEmail()">📋</button>
     </footer>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    let cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+
+    document.addEventListener("mousemove", function(e) {
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+    });
+});
+    </script>
+
 </body>
 </html>
