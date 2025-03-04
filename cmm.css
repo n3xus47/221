@@ -1,6 +1,6 @@
 body {
     background-color: #121212;
-    font-family: "Playfair Display", serif;
+    font-family: "Anton", sans-serif;
     font-weight: 600;
     font-style: normal;
     margin: 0;
@@ -17,7 +17,6 @@ body {
     cursor: none; /* Ukrywamy domyślny kursor */
 }
 
-/* Efekt fade-in */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -61,7 +60,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 22px;
-    font-family: "Playfair Display", serif;
+    font-family: "Anton", sans-serif;
     transition: color 0.3s ease-in-out;
 }
 
@@ -74,7 +73,7 @@ body {
 }
 
 .unifrakturcook-bold {
-    font-family: "UnifrakturCook", cursive;
+    font-family: "Anton", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
@@ -113,7 +112,7 @@ body {
 .contact-email {
     font-size: 20px;
     color: white;
-    font-family: "Playfair Display", serif;
+    font-family: "Anton", sans-serif;
 }
 
 .copy-button {
@@ -149,7 +148,6 @@ body {
     z-index: 9999;
 }
 
-/* Wyłączenie zmiany kursora na rączkę */
 a, button {
     cursor: none !important;
 }
