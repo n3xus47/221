@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cmm.css">
+    <script>
+        function copyEmail() {
+            navigator.clipboard.writeText("cocomadmovementmusic@gmail.com");
+            alert("skopiowano");
+        }
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">221</a>
+        <a href="holy-five.html">Holy Five</a>
+        <a href="cmm.html">C.M.M</a>
+    </div>
+
+    <a href="https://www.youtube.com/channel/UCPFOid1HxzwWMg9JT_HQuMw" target="_blank" class="title unifrakturcook-bold" onmouseover="document.body.classList.add('color-change')" onmouseout="document.body.classList.remove('color-change')">C.M.M</a>
+    <div class="subtitle unifrakturcook-bold">CocoMadMovement</div>
+
+    <footer class="contact">
+        <a href="mailto:cocomadmovementmusic@gmail.com" class="nav-button">Kontakt</a>
+        <button class="copy-button" onclick="copyEmail()">📋</button>
+    </footer>
+</body>
+</html>
