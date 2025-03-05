@@ -59,7 +59,7 @@ body {
 }
 
 .menu-toggle.active div:nth-child(1) {
-    transform: rotate(60deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -67,7 +67,7 @@ body {
 }
 
 .menu-toggle.active div:nth-child(3) {
-    transform: rotate(-60deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .menu {
@@ -156,16 +156,6 @@ body {
     transition: transform 0.1s linear;
     z-index: 9999;
 }
-
-a, button {
-    cursor: inherit !important;
-}
-
-
-a, button {
-    cursor: inherit !important;
-}
-
 
 a, button {
     cursor: inherit !important;
