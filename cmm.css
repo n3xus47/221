@@ -45,6 +45,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     cursor: inherit;
+    z-index: 1001; /* Ensure the toggle is always on top */
 }
 
 .menu-toggle div {
@@ -60,6 +61,7 @@ body {
 
 .menu-toggle.active div:nth-child(1) {
     transform: rotate(45deg) translate(8.25px, 8.25px);
+    background: #f4d03f;
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -68,16 +70,21 @@ body {
 
 .menu-toggle.active div:nth-child(3) {
     transform: rotate(-45deg) translate(8.25px, -8.25px);
+    background: #f4d03f;
 }
 
 .menu {
-    position: absolute;
-    top: 50px;
-    right: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1d1d1d; /* Slightly lighter shade than the background */
     display: none;
     flex-direction: column;
     gap: 10px;
-    text-align: right;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000; /* Make sure the menu is under the toggle */
 }
 
 .menu a {
@@ -155,6 +162,10 @@ body {
     transform: translate(-50%, -50%);
     transition: transform 0.1s linear;
     z-index: 9999;
+}
+
+a, button {
+    cursor: inherit !important;
 }
 
 a, button {
