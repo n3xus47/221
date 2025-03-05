@@ -7,16 +7,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Old+English+Text+MT&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="cmm.css">
     <script>
         function copyEmail() {
-            navigator.clipboard.writeText("cocomadmovementmusic@gmail.com");
+            navigator.clipboard.writeText("cocomadmovementmusic@gmail.com")
+            .then(() => alert("Skopiowano e-mail!"))
+            .catch(err => console.error("Błąd kopiowania: ", err));
         }
     </script>
 </head>
 <body>
+    <div class="custom-cursor"></div>
 
     <!-- Menu Hamburgerowe -->
     <div class="menu-toggle">
@@ -49,10 +51,9 @@
     <!-- Skrypt -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let cursor = document.createElement("div");
-            cursor.classList.add("custom-cursor");
-            document.body.appendChild(cursor);
-
+            let cursor = document.querySelector(".custom-cursor");
+            cursor.style.position = "absolute";
+            
             document.addEventListener("mousemove", function(e) {
                 cursor.style.left = e.pageX + "px";
                 cursor.style.top = e.pageY + "px";
@@ -64,6 +65,12 @@
             menuToggle.style.pointerEvents = "auto";
             menuToggle.addEventListener("click", function() {
                 menu.classList.toggle("active");
+            });
+
+            document.addEventListener("click", function(event) {
+                if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    menu.classList.remove("active");
+                }
             });
         });
     </script>
