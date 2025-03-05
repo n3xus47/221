@@ -94,4 +94,119 @@ body {
     color: white;
     text-decoration: none;
     font-size: 24px;
-    transition: color
+    transition: color 0.3s ease-in-out;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    color: #f4d03f;
+}
+
+.menu a:first-child {
+    margin-right: auto;
+}
+
+.menu a:nth-child(2) {
+    margin: 0 50px;
+}
+
+.menu a:last-child {
+    margin-left: auto;
+}
+
+.menu.active {
+    transform: translateY(0);
+}
+
+.main-title {
+    font-family: 'Old English Text MT', serif;
+    font-size: 120px;  
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.main-title:hover {
+    color: black;
+}
+
+.subtitle {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.blood-fill {
+    background: linear-gradient(to top, red 0%, red 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: bloodFill 6s linear forwards;
+}
+
+@keyframes bloodFill {
+    from {
+        background-position: 0 100%;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.contact {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121212;
+    width: 50px;
+    height: 50px;
+    transition: color 0.3s ease-in-out;
+}
+
+.copy-button:hover {
+    color: white;
+}
+
+.copied-msg {
+    position: absolute;
+    bottom: 60px; /* Position above the copy button */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background: url('knife_cursor_white.png') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+    z-index: 9999;
+}
+
+a, button {
+    cursor: inherit !important;
+}
