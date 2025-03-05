@@ -155,6 +155,17 @@ body {
     color: white;
 }
 
+.copied-msg {
+    position: absolute;
+    bottom: 60px; /* Position above the copy button */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
 .custom-cursor {
     position: fixed;
     width: 32px;
@@ -170,6 +181,7 @@ body {
 a, button {
     cursor: inherit !important;
 }
+
 
 
 a, button {
