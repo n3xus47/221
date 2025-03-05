@@ -35,7 +35,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 .menu-toggle div {
@@ -73,7 +73,7 @@ body {
     display: flex;
 }
 
-.title {
+.main-title {
     font-family: "Old English Text MT", serif;
     font-size: 120px;  
     font-weight: 700;
@@ -84,7 +84,7 @@ body {
     background: transparent !important;
 }
 
-.title:hover {
+.main-title:hover {
     color: black;
 }
 
@@ -140,6 +140,10 @@ body {
     transform: translate(-50%, -50%);
     transition: transform 0.1s linear;
     z-index: 9999;
+}
+
+a, button {
+    cursor: none !important;
 }
 
 a, button {
