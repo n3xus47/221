@@ -30,12 +30,7 @@
     </div>
 
     <!-- Tytuł Strony -->
-    <a href="https://www.youtube.com/channel/UCPFOid1HxzwWMg9JT_HQuMw" target="_blank" 
-        class="main-title" 
-        onmouseover="document.body.classList.add('color-change')" 
-        onmouseout="document.body.classList.remove('color-change')">
-        C.M.M
-    </a>
+    <h1 class="main-title">C.M.M</h1>
     <div class="subtitle">CocoMadMovement</div>
 
     <!-- Kontakt -->
@@ -59,6 +54,7 @@
             let menuToggle = document.querySelector(".menu-toggle");
             let menu = document.querySelector(".menu");
 
+            menuToggle.style.pointerEvents = "auto";
             menuToggle.addEventListener("click", function() {
                 menu.classList.toggle("active");
             });
