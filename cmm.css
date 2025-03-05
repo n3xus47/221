@@ -138,22 +138,17 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     position: relative;
+    background: linear-gradient(to top, red 0%, red 0%, white 0%, white 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 6s linear;
+    background-size: 100% 200%;
+    background-position: 0 0;
 }
 
 .blood-fill {
-    background: linear-gradient(to top, red 0%, red 100%);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: bloodFill 6s linear forwards;
-}
-
-@keyframes bloodFill {
-    from {
-        background-position: 0 100%;
-    }
-    to {
-        background-position: 0 0;
-    }
+    background-position: 0 100%;
 }
 
 .contact {
@@ -201,12 +196,6 @@ body {
     height: 32px;
     background: url('knife_cursor_white.png') no-repeat center;
     background-size: contain;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s linear;
-    z-index: 9999;
-}
-
-a, button {
+    pointer-events
     cursor: inherit !important;
 }
