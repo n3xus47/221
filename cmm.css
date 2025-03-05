@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Old English Text MT';
+    src: url('fonts/oldenglishtextmt.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #121212;
     font-weight: 600;
@@ -35,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: none;
+    cursor: inherit;
 }
 
 .menu-toggle div {
@@ -73,24 +80,18 @@ body {
 }
 
 .main-title {
-    font-family: "Old English Text MT", serif;
+    font-family: 'Old English Text MT', serif;
     font-size: 120px;  
     font-weight: 700;
     text-decoration: none;
     color: white;
     transition: color 0.3s ease-in-out, background-color 0.5s ease-in-out;
     display: inline-block;
-    background: transparent !important;
 }
 
 .main-title:hover {
     color: black;
-}
-
-.subtitle, .menu a, .contact-email {
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 3px; 
+    background-color: white;
 }
 
 .contact {
@@ -101,26 +102,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.contact-email {
-    font-size: 16px;
-    color: white;
-}
-
-.copy-button {
-    background: none;
-    border: 2px solid white;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    width: 30px;
-    height: 30px;
-    transition: all 0.3s ease-in-out;
 }
 
 .copy-button:hover {
@@ -138,6 +119,10 @@ body {
     transform: translate(-50%, -50%);
     transition: transform 0.1s linear;
     z-index: 9999;
+}
+
+a, button {
+    cursor: inherit !important;
 }
 
 a, button {
