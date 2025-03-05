@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Old English Text MT';
-    src: url('fonts/oldenglishtextmt.woff2') format('woff2');
+    src: url('oldenglishtextmt.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,54 +31,37 @@ body {
     to { opacity: 1; }
 }
 
+.color-change {
+    background-color: #7d4f34 !important;
+}
+
 .menu-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+    cursor: inherit;
 }
 
 .menu-toggle div {
-    width: 80%;
-    height: 6px;
+    width: 100%;
+    height: 4px;
     background: white;
     transition: all 0.3s ease-in-out;
 }
 
-.menu-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-100%);
-}
-
-.menu-bar.active {
-    transform: translateY(0);
-}
-
 .menu {
-    display: flex;
-    gap: 30px;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.menu.active {
-    opacity: 1;
-    pointer-events: auto;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
 }
 
 .menu a {
@@ -87,10 +70,15 @@ body {
     font-size: 24px;
     transition: color 0.3s ease-in-out;
     padding: 10px 20px;
+    display: inline-block;
 }
 
 .menu a:hover {
     color: #f4d03f;
+}
+
+.menu.active {
+    display: flex;
 }
 
 .main-title {
@@ -108,25 +96,51 @@ body {
 }
 
 .subtitle {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: 700;
     letter-spacing: 3px;
+}
+
+.contact {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .copy-button {
     background: none;
     border: none;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #121212;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     transition: color 0.3s ease-in-out;
 }
 
 .copy-button:hover {
     color: white;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background: url('knife_cursor_white.png') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+    z-index: 9999;
+}
+
+a, button {
+    cursor: inherit !important;
 }
