@@ -22,6 +22,11 @@ body {
     to { opacity: 1; }
 }
 
+/* Efekt zmiany tła po najechaniu na C.M.M */
+.color-change {
+    background-color: #7d4f34 !important;
+}
+
 /* Styl dla menu hamburgerowego */
 .menu-toggle {
     position: absolute;
@@ -48,18 +53,18 @@ body {
     top: 60px;
     right: 20px;
     background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     display: none;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     text-align: right;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 16px;
     font-family: "Playfair Display", serif;
     transition: color 0.3s ease-in-out;
 }
@@ -72,14 +77,14 @@ body {
     display: flex;
 }
 
-/* Styl gotycki dla C.M.M */
+/* Styl Blackletter dla C.M.M */
 .title {
-    font-family: "UnifrakturMaguntia", cursive;
+    font-family: "UnifrakturCook", cursive;
     font-size: 150px;  
     font-weight: 700;
     text-decoration: none;
     color: white;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, background-color 0.5s ease-in-out;
     display: inline-block;
     background: transparent !important;
 }
@@ -92,7 +97,7 @@ body {
 /* Styl luksusowy dla reszty tekstu */
 .subtitle, .menu a, .contact-email {
     font-family: "Playfair Display", serif;
-    font-size: 90px; 
+    font-size: 80px; 
     font-weight: 700;
     letter-spacing: 3px; 
 }
@@ -143,6 +148,10 @@ body {
     transform: translate(-50%, -50%);
     transition: transform 0.1s linear;
     z-index: 9999;
+}
+
+a, button {
+    cursor: none !important;
 }
 
 a, button {
