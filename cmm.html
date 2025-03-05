@@ -20,9 +20,9 @@
 
     <!-- Menu Hamburgerowe -->
     <div class="menu-toggle">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
 
     <div class="menu">
@@ -63,11 +63,13 @@
             menuToggle.style.pointerEvents = "auto";
             menuToggle.addEventListener("click", function() {
                 menu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
             });
 
             document.addEventListener("click", function(event) {
                 if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
                     menu.classList.remove("active");
+                    menuToggle.classList.remove("active");
                 }
             });
         });
