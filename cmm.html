@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Grenze+Gotisch:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="cmm.css">
     <script>
         function copyEmail() {
@@ -26,10 +26,12 @@
         <div></div>
     </div>
 
-    <div class="menu">
-        <a href="index.html">221</a>
-        <a href="holy-five.html">Holy Five</a>
-        <a href="cmm.html">C.M.M</a>
+    <div class="menu-bar">
+        <div class="menu">
+            <a href="index.html">221</a>
+            <a href="holy-five.html">Holy Five</a>
+            <a href="cmm.html">C.M.M</a>
+        </div>
     </div>
 
     <!-- Tytuł Strony -->
@@ -50,25 +52,29 @@
     <!-- Skrypt -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let cursor = document.querySelector(".custom-cursor");
-            cursor.style.position = "absolute";
-            
-            document.addEventListener("mousemove", function(e) {
-                cursor.style.left = e.pageX + "px";
-                cursor.style.top = e.pageY + "px";
-            });
-
             let menuToggle = document.querySelector(".menu-toggle");
+            let menuBar = document.querySelector(".menu-bar");
             let menu = document.querySelector(".menu");
-
-            menuToggle.style.pointerEvents = "auto";
+            let bars = menuToggle.querySelectorAll("div");
+            
             menuToggle.addEventListener("click", function() {
+                menuBar.classList.toggle("active");
                 menu.classList.toggle("active");
-            });
-
-            document.addEventListener("click", function(event) {
-                if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                    menu.classList.remove("active");
+                bars.forEach((bar, index) => {
+                    if (menu.classList.contains("active")) {
+                        bar.style.background = "#f4d03f";
+                    } else {
+                        bar.style.background = "white";
+                    }
+                });
+                if (menu.classList.contains("active")) {
+                    bars[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+                    bars[1].style.opacity = "0";
+                    bars[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
+                } else {
+                    bars[0].style.transform = "none";
+                    bars[1].style.opacity = "1";
+                    bars[2].style.transform = "none";
                 }
             });
         });
