@@ -11,6 +11,11 @@
     <script>
         function copyEmail() {
             navigator.clipboard.writeText("cocomadmovementmusic@gmail.com")
+            .then(() => {
+                const copiedMsg = document.querySelector(".copied-msg");
+                copiedMsg.style.opacity = 1;
+                setTimeout(() => copiedMsg.style.opacity = 0, 1000);
+            })
             .catch(err => console.error("Błąd kopiowania: ", err));
         }
     </script>
@@ -44,6 +49,7 @@
     <footer class="contact">
         <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
         <button class="copy-button" onclick="copyEmail()">📋</button>
+        <span class="copied-msg">Skopiowano!</span>
     </footer>
     
     <!-- Skrypt -->
