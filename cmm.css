@@ -137,24 +137,6 @@ body {
     font-size: 80px;
     font-weight: 700;
     letter-spacing: 3px;
-    position: relative;
-    overflow: hidden; /* Hide the overflowing part of the gradient */
-}
-
-.subtitle::before {
-    content: '';
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background: linear-gradient(to top, transparent 50%, red 50%);
-    transition: bottom 6s linear;
-    z-index: -1; /* Make sure the pseudo-element is behind the text */
-}
-
-.blood-fill::before {
-    bottom: 0;
 }
 
 .contact {
