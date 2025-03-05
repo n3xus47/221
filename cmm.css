@@ -46,6 +46,8 @@ body {
     justify-content: space-between;
     cursor: inherit;
     z-index: 1001; /* Ensure the toggle is always on top */
+    padding: 20px; /* Increase clickable area */
+    box-sizing: content-box; /* Ensure padding doesn't affect element size */
 }
 
 .menu-toggle div {
@@ -161,6 +163,8 @@ body {
     width: 50px;
     height: 50px;
     transition: color 0.3s ease-in-out;
+    padding: 20px; /* Increase clickable area */
+    box-sizing: content-box; /* Ensure padding doesn't affect element size */
 }
 
 .copy-button:hover {
