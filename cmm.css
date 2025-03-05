@@ -137,6 +137,18 @@ body {
     font-size: 80px;
     font-weight: 700;
     letter-spacing: 3px;
+    position: relative;
+    background: linear-gradient(to top, red 0%, red 0%, white 0%, white 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 6s linear;
+    background-size: 100% 200%;
+    background-position: 0 0;
+}
+
+.blood-fill {
+    background-position: 0 100%;
 }
 
 .contact {
