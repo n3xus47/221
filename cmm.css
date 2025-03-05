@@ -17,14 +17,15 @@ body {
     cursor: none; /* Ukrywamy domyślny kursor */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 /* Efekt zmiany tła po najechaniu na C.M.M */
 .color-change {
     background-color: #7d4f34 !important;
+}
+
+/* Efekt fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Styl dla menu hamburgerowego */
@@ -77,9 +78,9 @@ body {
     display: flex;
 }
 
-/* Styl Blackletter dla C.M.M */
+/* Styl Old English dla C.M.M */
 .title {
-    font-family: "UnifrakturCook", cursive;
+    font-family: "Old English Text MT", serif;
     font-size: 150px;  
     font-weight: 700;
     text-decoration: none;
@@ -150,10 +151,7 @@ body {
     z-index: 9999;
 }
 
-a, button {
-    cursor: none !important;
-}
-
+/* Wyłączenie zmiany kursora na rączkę */
 a, button {
     cursor: none !important;
 }
