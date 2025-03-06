@@ -141,6 +141,12 @@ body {
     letter-spacing: 3px;
 }
 
+.date {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
 .contact {
     position: absolute;
     bottom: 20px;
