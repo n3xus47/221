@@ -45,7 +45,12 @@
     </a>
     <div class="subtitle">CocoMadMovement</div>
     <div class="date">Druga połowa 2025 roku</div>
-    
+
+    <!-- Artyści -->
+    <div class="artist artist-rime">Rime</div>
+    <div class="artist artist-coc">Coc</div>
+    <div class="artist artist-frostfire">Frostfire</div>
+
     <!-- Kontakt -->
     <footer class="contact">
         <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
@@ -78,6 +83,14 @@
                     menu.classList.remove("active");
                     menuToggle.classList.remove("active");
                 }
+            });
+
+            document.querySelector('.main-title').addEventListener('mouseover', function() {
+                document.querySelectorAll('.artist').forEach(artist => artist.classList.add('invert-color'));
+            });
+            
+            document.querySelector('.main-title').addEventListener('mouseout', function() {
+                document.querySelectorAll('.artist').forEach(artist => artist.classList.remove('invert-color'));
             });
         });
     </script>
