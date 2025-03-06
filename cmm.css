@@ -147,6 +147,35 @@ body {
     margin-top: 10px;
 }
 
+/* Nowe style dla artystów */
+.artist {
+    font-family: 'Old English Text MT', serif;
+    font-size: 80px; /* Wielkość dopasowana do napisu "CocoMadMovement" */
+    font-weight: 700;
+    position: absolute;
+    color: red; /* Kolor czerwony */
+    transition: color 0.3s ease-in-out;
+}
+
+.artist-rime {
+    top: 10%;
+    left: 20%;
+}
+
+.artist-coc {
+    top: 50%;
+    left: 70%;
+}
+
+.artist-frostfire {
+    top: 80%;
+    left: 40%;
+}
+
+.artist.invert-color {
+    color: black; /* Kolor odwrotny */
+}
+
 .contact {
     position: absolute;
     bottom: 20px;
@@ -158,6 +187,20 @@ body {
 }
 
 .copy-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121212;
+    width: 50px;
+    height: 50px;
+    transition: color 0.3s ease-in-out;
+    padding: 20px; /* Increase clickable area */
+    box-sizing: content-box; /* Ensure
+    .copy-button {
     background: none;
     border: none;
     font-size: 30px;
