@@ -3,10 +3,26 @@
     src: url('oldenglishtextmt.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap; /* Poprawia wydajność ładowania czcionek */
+}
+
+:root {
+    --dark-bg: #121212;
+    --menu-bg: #1d1d1d;
+    --accent-color: #f4d03f;
+    --text-color: white;
+    --artist-color: red;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #121212;
+    background-color: var(--dark-bg);
     font-weight: 600;
     font-style: normal;
     margin: 0;
@@ -14,10 +30,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    color: white;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    color: var(--text-color);
     text-align: center;
     opacity: 0;
     animation: fadeIn 2s forwards;
@@ -35,8 +51,9 @@ body {
     background-color: #7d4f34 !important;
 }
 
+/* Menu hamburgerowe */
 .menu-toggle {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 40px;
@@ -45,25 +62,25 @@ body {
     flex-direction: column;
     justify-content: space-between;
     cursor: inherit;
-    z-index: 1001; /* Ensure the toggle is always on top */
-    padding: 20px; /* Increase clickable area */
-    box-sizing: content-box; /* Ensure padding doesn't affect element size */
+    z-index: 1001;
+    padding: 20px;
+    margin: -20px;
 }
 
 .menu-toggle div {
     width: 100%;
     height: 6px;
-    background: white;
-    transition: all 0.3s ease-in-out;
+    background: var(--text-color);
+    transition: all var(--transition-speed) ease-in-out;
 }
 
 .menu-toggle:hover div {
-    background: #f4d03f;
+    background: var(--accent-color);
 }
 
 .menu-toggle.active div:nth-child(1) {
     transform: rotate(45deg) translate(8.25px, 8.25px);
-    background: #f4d03f;
+    background: var(--accent-color);
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -72,63 +89,53 @@ body {
 
 .menu-toggle.active div:nth-child(3) {
     transform: rotate(-45deg) translate(8.25px, -8.25px);
-    background: #f4d03f;
+    background: var(--accent-color);
 }
 
+/* Menu nawigacyjne */
 .menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1d1d1d; /* Slightly lighter shade than the background */
+    background-color: var(--menu-bg);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 100px;
-    box-sizing: border-box;
     transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000; /* Make sure the menu is under the toggle */
+    transition: transform var(--transition-speed) ease-in-out;
+    z-index: 1000;
+    gap: 50px;
 }
 
 .menu a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 24px;
-    transition: color 0.3s ease-in-out;
+    transition: color var(--transition-speed) ease-in-out;
     padding: 10px 20px;
-    display: inline-block;
 }
 
 .menu a:hover {
-    color: #f4d03f;
-}
-
-.menu a:first-child {
-    margin-right: auto;
-}
-
-.menu a:nth-child(2) {
-    margin: 0 50px;
-}
-
-.menu a:last-child {
-    margin-left: auto;
+    color: var(--accent-color);
 }
 
 .menu.active {
     transform: translateY(0);
 }
 
+/* Tytuły */
 .main-title {
     font-family: 'Old English Text MT', serif;
     font-size: 120px;  
     font-weight: 700;
     text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease-in-out;
     display: inline-block;
+    margin-bottom: 20px;
 }
 
 .main-title:hover {
@@ -139,22 +146,30 @@ body {
     font-size: 80px;
     font-weight: 700;
     letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 .date {
     font-size: 24px;
     font-weight: 400;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
-/* Nowe style dla artystów */
+.page-title {
+    font-family: 'Old English Text MT', serif;
+    font-size: 60px;
+    margin: 80px 0 40px;
+}
+
+/* Artyści */
 .artist {
     font-family: 'Old English Text MT', serif;
-    font-size: 80px; /* Wielkość dopasowana do napisu "CocoMadMovement" */
+    font-size: 80px;
     font-weight: 700;
     position: absolute;
-    color: red; /* Kolor czerwony */
-    transition: color 0.3s ease-in-out;
+    color: var(--artist-color);
+    transition: color var(--transition-speed) ease-in-out;
 }
 
 .artist-rime {
@@ -173,17 +188,19 @@ body {
 }
 
 .artist.invert-color {
-    color: black; /* Kolor odwrotny */
+    color: black;
 }
 
+/* Kontakt */
 .contact {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 16px;
 }
 
 .copy-button {
@@ -194,43 +211,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #121212;
+    color: var(--dark-bg);
     width: 50px;
     height: 50px;
-    transition: color 0.3s ease-in-out;
-    padding: 20px; /* Increase clickable area */
-    box-sizing: content-box; /* Ensure
-    .copy-button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #121212;
-    width: 50px;
-    height: 50px;
-    transition: color 0.3s ease-in-out;
-    padding: 20px; /* Increase clickable area */
-    box-sizing: content-box; /* Ensure padding doesn't affect element size */
+    transition: color var(--transition-speed) ease-in-out;
+    padding: 0;
 }
 
 .copy-button:hover {
-    color: white;
+    color: var(--text-color);
 }
 
 .copied-msg {
     position: absolute;
-    bottom: 60px; /* Position above the copy button */
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity var(--transition-speed) ease-in-out;
 }
 
+/* Niestandardowy kursor */
 .custom-cursor {
     position: fixed;
     width: 32px;
@@ -243,6 +246,90 @@ body {
     z-index: 9999;
 }
 
+/* Linki */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.link-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform var(--transition-speed) ease-in-out, 
+                box-shadow var(--transition-speed) ease-in-out;
+}
+
+.link-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.link-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color var(--transition-speed) ease-in-out;
+}
+
+.link-title:hover {
+    color: var(--accent-color);
+}
+
+.link-description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Ogólne stylowanie dla elementów interaktywnych */
 a, button {
     cursor: inherit !important;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .menu {
+        padding: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .main-title {
+        font-size: 80px;
+    }
+    
+    .subtitle {
+        font-size: 50px;
+    }
+    
+    .artist {
+        font-size: 50px;
+    }
+    
+    .artist-rime {
+        top: 5%;
+        left: 10%;
+    }
+    
+    .artist-coc {
+        top: 30%;
+        left: 70%;
+    }
+    
+    .artist-frostfire {
+        top: 70%;
+        left: 5%;
+    }
+    
+    .page-title {
+        font-size: 40px;
+        margin: 100px 0 30px;
+    }
 }
