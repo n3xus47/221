@@ -22,20 +22,18 @@
 </head>
 <body>
     <div class="custom-cursor"></div>
-
     <!-- Menu Hamburgerowe -->
     <div class="menu-toggle">
         <div></div>
         <div></div>
         <div></div>
     </div>
-
     <div class="menu">
         <a href="index.html">221</a>
         <a href="holy-five.html">Holy Five</a>
         <a href="cmm.html">C.M.M</a>
+        <a href="linki.html">Linki</a>
     </div>
-
     <!-- Tytuł Strony -->
     <a href="https://www.youtube.com/channel/UCPFOid1HxzwWMg9JT_HQuMw" target="_blank" 
         class="main-title" 
@@ -45,12 +43,10 @@
     </a>
     <div class="subtitle">CocoMadMovement</div>
     <div class="date">Druga połowa 2025 roku</div>
-
     <!-- Artyści -->
     <div class="artist artist-rime">Rime</div>
     <div class="artist artist-coc">Coc</div>
     <div class="artist artist-frostfire">Frostfire</div>
-
     <!-- Kontakt -->
     <footer class="contact">
         <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
@@ -68,23 +64,19 @@
                 cursor.style.left = e.pageX + "px";
                 cursor.style.top = e.pageY + "px";
             });
-
             let menuToggle = document.querySelector(".menu-toggle");
             let menu = document.querySelector(".menu");
-
             menuToggle.style.pointerEvents = "auto";
             menuToggle.addEventListener("click", function() {
                 menu.classList.toggle("active");
                 menuToggle.classList.toggle("active");
             });
-
             document.addEventListener("click", function(event) {
                 if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
                     menu.classList.remove("active");
                     menuToggle.classList.remove("active");
                 }
             });
-
             document.querySelector('.main-title').addEventListener('mouseover', function() {
                 document.querySelectorAll('.artist').forEach(artist => artist.classList.add('invert-color'));
             });
