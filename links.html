@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linki - CMM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cmm.css">
+    <script>
+        function copyEmail() {
+            navigator.clipboard.writeText("cocomadmovementmusic@gmail.com")
+            .then(() => {
+                const copiedMsg = document.querySelector(".copied-msg");
+                copiedMsg.style.opacity = 1;
+                setTimeout(() => copiedMsg.style.opacity = 0, 1000);
+            })
+            .catch(err => console.error("Błąd kopiowania: ", err));
+        }
+    </script>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <!-- Menu Hamburgerowe -->
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu">
+        <a href="index.html">221</a>
+        <a href="holy-five.html">Holy Five</a>
+        <a href="cmm.html">C.M.M</a>
+        <a href="linki.html">Linki</a>
+    </div>
+    <!-- Tytuł Strony -->
+    <h1 class="page-title">Przydatne Linki</h1>
+    
+    <!-- Lista Linków -->
+    <div class="links-container">
+        <div class="link-item">
+            <a href="https://app.tealhq.com/home" target="_blank" class="link-title">Teal HQ</a>
+            <p class="link-description">Platforma do zarządzania projektami i współpracy</p>
+        </div>
+        <!-- Miejsce na dodatkowe linki w przyszłości -->
+    </div>
+
+    <!-- Kontakt -->
+    <footer class="contact">
+        <span class="contact-email">Kontakt: cocomadmovementmusic@gmail.com</span>
+        <button class="copy-button" onclick="copyEmail()">📋</button>
+        <span class="copied-msg">Skopiowano!</span>
+    </footer>
+    
+    <!-- Skrypt -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cursor = document.querySelector(".custom-cursor");
+            cursor.style.position = "absolute";
+            
+            document.addEventListener("mousemove", function(e) {
+                cursor.style.left = e.pageX + "px";
+                cursor.style.top = e.pageY + "px";
+            });
+            
+            let menuToggle = document.querySelector(".menu-toggle");
+            let menu = document.querySelector(".menu");
+            menuToggle.style.pointerEvents = "auto";
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
+            
+            document.addEventListener("click", function(event) {
+                if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    menu.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
