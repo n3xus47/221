@@ -1,1 +1,74 @@
+body {
+    margin:0; /* od ai aby globalnie margines był ustawiony na 0, nie wiem czy cos to zmienia */
+}
 
+.center {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+height:100vh;
+margin:0;
+}
+
+h1 {
+font-size: 200px;
+}
+
+h2 {
+font-size:80px;
+margin-top:-140px;    
+}
+
+h3 {
+font-size:20px;
+}
+
+.contact {
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    text-decoration: none;
+    color: #000;
+bottom:60px;
+font-size:25px;
+width:100%;
+}
+
+.artists {
+    display:flex;
+}
+
+.footer {
+    position:absolute;
+    text-align:center;
+bottom:5px;
+font-size:16px;
+width:100%;
+}
+
+.burger-menu {
+    position:absolute;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+top:59.5px; /*20,5 wynosi kazda przerwa((100-18):4), stąd ta różnica */
+right:80px;
+width:100px;
+height:100px;
+}
+.burger-menu span {
+width: 100%;
+height: 6px;
+background-color: #000;
+border-radius: 4px;
+}
+
+.notepad-icon {
+    position:absolute;
+top:320px;
+left:50%;
+transform:translateX(300px);
+}
