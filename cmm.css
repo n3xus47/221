@@ -1,9 +1,13 @@
 @font-face {
+ 
     font-family: 'FoughtKnight';
-    src: url('https://n3xus47.github.io/221/FoughtKnight.woff2') format('woff2'), 
-    url('https://n3xus47.github.io/221/FoughtKnight.ttf') format('truetype');
+ 
+    src: url('FoughtKnight.woff2') format('woff2');
+ 
     font-weight: normal;
+ 
     font-style: normal;
+ 
 }
 
 body {
