@@ -31,7 +31,31 @@ body {
     
   }
   
-  .footer {
+.footer {
+    width: 100%;
+    bootom:0px;
+    border-radius: 0;
+    position: static;
+    z-index: 8;
+    background-color: #d6d6d6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  /* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U DOŁU STRONY */
+  .footer-menu li a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .footer-menu li a:hover {
+    color: #555555;
    width:100%;
     bottom:0px;
     border-radius:0;
