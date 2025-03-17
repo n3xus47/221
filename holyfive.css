@@ -150,10 +150,10 @@ margin: 0 0 10px 0;
 
 
 .copyright {
-    position: absolute;
+  display:flex;
+  align-items: flex end;
+  justifycontent: center;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
     width: 100%;
 }
