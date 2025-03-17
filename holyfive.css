@@ -151,7 +151,7 @@ margin: 0 0 10px 0;
 
 .copyright {
   display:flex;
-  align-items: flex end;
+  align-items: flex-end;
   justifycontent: center;
     bottom: 10px;
     text-align: center;
