@@ -56,6 +56,7 @@ body {
   width:100%;
   mix-blend-mode: normal;
   opacity: 1;
+  margin-top: 0;
 }
 .banercontent {
   z-index: 9;                  
