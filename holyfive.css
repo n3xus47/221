@@ -152,9 +152,9 @@ margin: 0 0 10px 0;
 .copyright {
   display:flex;
   align-items: flex-end;
-  justifycontent: center;
+  justify-content: center;
+  position: absolute;
     bottom: 10px;
-    text-align: center;
     width: 100%;
 }
 .copyright p {
