@@ -48,6 +48,39 @@ body {
   color: #BC9C22;
 }
 
+
+.baner {
+  position: relative;
+  background-color: #555555;
+  height:250px;
+  width:100%;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+.banercontent {
+  z-index: 9;                  
+  padding-left: 16vw;
+  padding-right: 16vw;
+  display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 67%;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+.h1 {
+  text-align: center;
+  color:#BC9C22;
+  white-space: pre-wrap;
+  transition-timing-function: ease;
+  transition-duration: 0.9s;
+  transition-delay: 0.3s;
+  margin:0 120px;
+}
+
+
+
 .footer {
   width: 100%;
   bottom:0px;
