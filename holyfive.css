@@ -59,8 +59,24 @@ video {
   display: flex;          
   flex-direction: column; 
   align-items: center;
+  min-height:100%;
+  justify-content:flex-end;
+  
 } 
 
+.h3 {
+  font-size: 20px;
+  font-family:"JetBrains Mono", monospace;
+  font-weight: 900;
+  font-style: normal;
+  text-align: center;
+  color: #464646;
+  margin: 0 30px;
+  position: absolute; 
+  bottom: 0; 
+  width: 100%; 
+  padding: 80px 0; 
+}
 
 .baner {
   position: relative;
@@ -96,6 +112,8 @@ video {
   transition-delay: 0.3s;
   margin:0 120px;
 }
+
+
 
 .sponsors {
   z-index:10;
