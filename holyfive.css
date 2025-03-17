@@ -56,7 +56,7 @@ video {
 
 .baner {
   position: relative;
-  background-color: #555555;
+  background-color:#FFF;
   height:250px;
   width:100%;
   mix-blend-mode: normal;
@@ -76,8 +76,12 @@ video {
   height:100%;
 }
 .h1 {
+  font-size:50px;
+  font-family: "Esteban", serif;
+  font-weight: 900;
+  font-style: normal;
   text-align: center;
-  color:#BC9C22;
+  color:#000000;
   white-space: pre-wrap;
   transition-timing-function: ease;
   transition-duration: 0.9s;
@@ -166,7 +170,7 @@ margin-bottom:25px;
 text-align: center;
 margin-top:0;
 
-font-family: "Racing Sans One", sans-serif;
+font-family: "Esteban", serif;
 font-weight: 400;
 font-style: normal;
 }
