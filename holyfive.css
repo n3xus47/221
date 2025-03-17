@@ -86,7 +86,8 @@ video {
 
 
 .footer {
-  padding: 40px;
+  padding-top:50px;
+  padding-bottom:50px;
   width: 100%;
   bottom:0px;
   border-radius: 0;
