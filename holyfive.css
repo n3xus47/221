@@ -92,8 +92,8 @@ video {
 
 
 .footer {
-  padding-top:50px;
-  padding-bottom:50px;
+  padding-top:90px;
+  padding-bottom:30px;
   width: 100%;
   bottom:0px;
   border-radius: 0;
@@ -117,7 +117,7 @@ video {
 .logo-footer {
     display: flex;
     margin-bottom: 40px;
-    margin-left: -2em;
+    margin-left: -4em;
 }
 
 .social-icons {
