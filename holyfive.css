@@ -80,7 +80,7 @@ body {
   opacity: 0;
 }
 
-/* ----- Header i Nawigacja ----- */
+/* ----- Header z Logo i Nawigacją ----- (nalezy dodac po kliknieciu na logo przekierowanie na strone glowna)*/
 .top-header {
   width: 100%;
   height: 132px;
