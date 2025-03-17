@@ -1,65 +1,82 @@
 body {
-    margin:0;
-    padding:0;
-    border:none; 
-    height: 100vh;
+  margin:0;
+  padding:0;
+  min-height: 100vh;
+}
+.top-header {
+  width: 100%;
+  top:0px;
+  position: sticky;
+  z-index: 10;
+  background-color: #d6d6d6;
+  display: flex;
+  align-items: center;
 }
 .header {
-    width: 100%;
-    top:0px;
-    border-radius: 0;
-    position: sticky;
-    z-index: 10;
-    background-color: #d6d6d6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  z-index: 9;
+  box-sizing: border-box;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  padding-left: 12vw;
+  padding-right: 12vw;
+  display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 67%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+.nav-menu {
+  font-family: "JetBrains Mono", monospace;
+  list-style-type: none;
+  z-index: 3;
+  gap:80px;
+  justify-content:flex-end;
+  display: inline-flex
+}
+/* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U GÓRY STRONY */
+.nav-menu li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav-menu li a:hover {
+  color: #555555;
   
-  .nav-menu {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
-  /* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U GÓRY STRONY */
-  .nav-menu li a {
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  .nav-menu li a:hover {
-    color: #555555;
-    
-  }
-  
+}
+
 .footer {
-    width: 100%;
-    bootom:0px;
-    border-radius: 0;
-    position: static;
-    z-index: 8;
-    background-color: #d6d6d6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .footer-menu {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
-  /* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U DOŁU STRONY */
-  .footer-menu li a {
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  .footer-menu li a:hover {
-    color: #555555;
-   width:100%;
-    bottom:0px;
-    border-radius:0;
-    position:static;
-    z-index:10;
-  }
+  width: 100%;
+  bottom:0px;
+  border-radius: 0;
+  position: static;
+  z-index: 8;
+  background-color: #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+/* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U DOŁU STRONY */
+.footer-menu li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer-menu li a:hover {
+  color: #555555;
+ width:100%;
+  bottom:0px;
+  border-radius:0;
+  position:static;
+  z-index:10;
+}
