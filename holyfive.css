@@ -48,6 +48,9 @@ body {
   color: #BC9C22;
 }
 
+video {
+  display: block;
+}
 
 .baner {
   position: relative;
