@@ -2,6 +2,7 @@ body {
   margin:0;
   padding:0;
   min-height: 100vh;
+  font-family: "JetBrains Mono", monospace;
 }
 .top-header {
   width: 100%;
@@ -45,6 +46,7 @@ body {
 }
 
 .nav-menu li a:hover {
+  transition: color 0.3s ease;
   color: #BC9C22;
 }
 
@@ -93,7 +95,7 @@ video {
   border-radius: 0;
   position: relative;
   z-index: 8;
-  background-color:grey;
+  background-color:black;
   color:white;
   display: flex;
   align-items: center;
@@ -105,29 +107,78 @@ video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 250px;
+    width: 40%;
 }
 
 .logo-footer {
-    margin-bottom: 25px;
+    display: flex;
+    margin-bottom: 40px;
+    margin-left: -2em;
 }
 
 .social-icons {
-    display: flex;
-    gap:25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  gap: 2em; 
 }
+
+
+.social-icon {
+  font-size: 1.5em;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.youtube:hover {
+    color: #ff0000; 
+}
+.twitch:hover {
+    color: #9146ff; 
+}
+.discord:hover {
+    color: #5865f2; 
+}
+.twitter:hover {
+  color: #1da1f2; 
+}
+
 
 .right-footer-section {
     display: flex;
     flex-direction: column;
+    width: 60%;
+    justify-content: flex-start;
     align-items: center;
-    margin-right: 250px; 
+    height:100%;
 }
 
-.h2 {
+h2 {
 color:#BC9C22;
-font-size: 2em;
-margin: 0 0 10px 0;
+font-size:80px;
+margin-bottom:25px;
+text-align: center;
+margin-top:0;
+
+font-family: "Racing Sans One", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+.churchicon {
+color: white;
+ }
+.footer-separator {
+  width: 50%;
+  height: 1px;
+border-radius:2px;
+  background-color: white;
+  margin-bottom: 30px;
 }
 
 .footer-menu {
@@ -135,7 +186,7 @@ margin: 0 0 10px 0;
     padding: 0;
     margin: 0;
     display: flex; 
-    gap: 25px; 
+    gap: 100px; 
     justify-content: center;
 }
 
@@ -147,6 +198,8 @@ margin: 0 0 10px 0;
 
 .footer-menu a:hover {
     text-decoration: none;
+    color: #BC9C22;
+    transition: color 0.3s ease;
 }
 
 
@@ -157,6 +210,3 @@ bottom:5px;
 font-size:16px;
 width:100%;
 }
-
-
-
