@@ -150,15 +150,12 @@ margin: 0 0 10px 0;
 
 
 .copyright {
-  display:flex;
-  justify-content: center;
-  position: absolute;
-    bottom: 10px;
-  color: white
+position:absolute;
+text-align:center;
+bottom:5px;
+font-size:16px;
+width:100%;
 }
-.copyright p {
-    margin: 0;
-    font-size: 0.7em;
-}
+
 
 
