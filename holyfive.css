@@ -10,7 +10,7 @@ body {
   top:0px;
   position: sticky;
   z-index: 10;
-  background-color: #d6d6d6;
+  background-color: #000000;
   display: flex;
   align-items: center;
 }
@@ -42,7 +42,7 @@ body {
 /* INTERAKTYWNOŚĆ PRZY UŻYWANIU MYSZKI W MENU NAWIGACYJNYM U GÓRY STRONY */
 .nav-menu li a {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
 .nav-menu li a:hover {
@@ -65,9 +65,9 @@ video {
 } 
 
 .h3 {
-  font-size: 20px;
+  font-size: 14px;
   font-family:"JetBrains Mono", monospace;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
   text-align: center;
   color: #464646;
@@ -75,7 +75,7 @@ video {
   position: absolute; 
   bottom: 0; 
   width: 100%; 
-  padding: 80px 0; 
+  padding: 70px 0; 
 }
 
 .baner {
@@ -219,7 +219,7 @@ align-items: center;
 .logo-footer {
     display: flex;
     margin-bottom: 40px;
-    margin-left: -4em;
+    margin-left: -6.5em;
 }
 
 .social-icons {
