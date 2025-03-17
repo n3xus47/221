@@ -92,7 +92,7 @@ video {
   border-radius: 0;
   position: relative;
   z-index: 8;
-  background-color:dark grey;
+  background-color:grey;
   color:white;
   display: flex;
   align-items: center;
