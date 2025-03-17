@@ -1,3 +1,89 @@
+                  /*funkcja definiująca krzywą czasu dla animacji i przejść */
+:root {
+  --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+*{  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+.loading-container {
+  background-color: black;
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+}
+
+.loading-logo {
+  animation: pulse 0.8s infinite alternate var(--ease-in-out-sine);
+  width: 50px;
+  height: 50px;
+}
+
+.loading-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /*białe logo */
+}
+
+.loading-label {
+  font-family:"JetBrains Mono", monospace;
+  text-transform: uppercase;
+  color: white; /
+  font-size: 0.75rem;
+}
+
+/*animacje dla loading screena*/
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.enter-transition {
+  transition: opacity 0.4s var(--ease-out-quint);
+}
+
+.leave-transition {
+  transition: opacity 0.4s var(--ease-out-sine);
+}
+
+.hidden {
+  opacity: 0;
+}
+/*loading screena na ekranie szerszym niż 1024px*/
+@media screen and (min-width: 1024px) {
+  .loading-logo {
+    width: 60px;
+    height: 60px;
+  }
+  .loading-label {
+    font-size: 0.875rem;
+  }
+}
+
+
+
+
+
+
+
+
 body {
   margin:0;
   padding:0;
