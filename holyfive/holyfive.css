@@ -118,7 +118,6 @@ body {
 
 
 .nav-menu {
-  font-family: "JetBrains Mono", monospace;
   list-style-type:none;
   z-index: 3;
   gap:80px;
