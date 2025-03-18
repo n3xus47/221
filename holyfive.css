@@ -1,4 +1,4 @@
-                  /*funkcja definiująca krzywą czasu dla animacji i przejść */
+    /*funkcja definiująca krzywą czasu dla animacji i przejść */
 :root {
   --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
