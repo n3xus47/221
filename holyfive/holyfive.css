@@ -307,6 +307,9 @@ align-items: center;
     margin-bottom: 40px;
     margin-left: -6.5em;
 }
+.logo-footer img {
+filter: brightness(0) invert(1);
+}
 
 .social-icons {
   display: flex;
