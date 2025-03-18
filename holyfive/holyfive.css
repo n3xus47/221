@@ -1,4 +1,4 @@
-    /*funkcja definiująca krzywą czasu dla animacji i przejść */
+    
 :root {
   --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
@@ -76,7 +76,10 @@
 
 
 
-
+@font-face {
+  font-family: "Hoover-Varible"; 
+  src: url("Hoover-Variable.ttf") format("truetype");
+}
 
 
 
@@ -85,7 +88,7 @@ body {
   margin:0;
   padding:0;
   min-height: 100vh;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Hoover-Variable";
 }
 .top-header {
   width: 100%;
@@ -130,7 +133,7 @@ body {
 
 .nav-menu li a:hover {
   transition: color 0.3s ease;
-  color: #BC9C22;
+  color: #ff3131;
 }
 
 video {
@@ -349,19 +352,16 @@ align-items: center;
 }
 
 h2 {
-color:#BC9C22;
+color:#6A7EFC;
 font-size:80px;
 margin-bottom:25px;
 text-align: center;
 margin-top:0;
 
-font-family: "Esteban", serif;
-font-weight: 400;
-font-style: normal;
+font-family: "Mrs Saint Delafield", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
-.churchicon {
-color: white;
- }
 .footer-separator {
   width: 50%;
   height: 1px;
@@ -387,7 +387,7 @@ border-radius:2px;
 
 .footer-menu a:hover {
     text-decoration: none;
-    color: #BC9C22;
+    color: #ff3131;
     transition: color 0.3s ease;
 }
 
