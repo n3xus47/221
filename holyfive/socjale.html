@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socjale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .social-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .social-icon {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+        .social-icon p {
+            font-weight: bold;
+            margin: 0;
+        }
+        .social-feeds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feed-column {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .feed-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .feed-header img {
+            width: 30px;
+            height: 30px;
+            margin-right: 1rem;
+        }
+        .feed-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        .feed-post {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        .post-author {
+            font-weight: bold;
+            margin: 0;
+        }
+        .post-date {
+            color: #777;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        .post-content {
+            margin-bottom: 1rem;
+        }
+        .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .post-actions {
+            display: flex;
+            gap: 1.5rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .follow-cta {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+        .follow-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .social-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .social-button:hover {
+            background-color: #444;
+        }
+        .facebook {
+            background-color: #3b5998;
+        }
+        .twitter {
+            background-color: #1da1f2;
+        }
+        .instagram {
+            background-color: #c32aa3;
+        }
+        .youtube {
+            background-color: #ff0000;
+        }
+        .tiktok {
+            background-color: #000000;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .social-icons {
+                flex-wrap: wrap;
+            }
+            .social-feeds {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nazwa Klubu</h1>
+    </header>
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="zawodnicy.html">Zawodnicy</a>
+        <a href="socjale.html">Socjale</a>
+        <a href="akademia.html">Akademia</a>
+        <a href="aktualnosci.html">Aktualności</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <main>
+        <div class="social-intro">
+            <h2>Bądź na bieżąco z życiem klubu</h2>
+            <p>Śledź nas w mediach społecznościowych, aby być na bieżąco z wszystkimi aktualnościami, wynikami meczów, wywiadami i wydarzeniami z życia klubu.</p>
+        </div>
+        
+        <div class="social-icons">
+            <div class="social-icon">
+                <img src="/api/placeholder/120/120" alt="Facebook Icon">
+                <p>Facebook</p>
+            </div>
+            <div class="social-icon">
+                <img src="/api/placeholder/120/120" alt="Instagram Icon">
+                <p>Instagram</p>
+            </div>
+            <div class="social-icon">
+                <img src="/api/placeholder/120/120" alt="Twitter Icon">
+                <p>Twitter</p>
+            </div>
+            <div class="social-icon">
+                <img src="/api/placeholder/120/120" alt="YouTube Icon">
+                <p>YouTube</p>
+            </div>
+            <div class="social-icon">
+                <img src="/api/placeholder/120/120" alt="TikTok Icon">
+                <p>TikTok</p>
+            </div>
+        </div>
+        
+        <h2>Najnowsze aktywności</h2>
+        
+        <div class="social-feeds">
+            <!-- Facebook Feed -->
+            <div class="feed-column">
+                <div class="feed-header">
+                    <img src="/api/placeholder/50/50" alt="Facebook Icon">
+                    <h3 class="feed-title">Facebook</h3>
+                </div>
+                
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="/api/placeholder/80/80" alt="Profile Avatar" class="post-avatar">
+                        <div>
+                            <p class="post-author">Nazwa Klubu</p>
+                            <p class="post-date">2 godziny temu</p>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Wielkie zwycięstwo naszej drużyny! Dziękujemy kibicom za niesamowite wsparcie podczas wczorajszego meczu! #TeamSpirit #Victory</p>
+                        <img src="/api/placeholder/400/250" alt="Post Image" class="post-image">
+                    </div>
+                    <div class="post-actions">
+                        <div class="post-action">❤️ 245 polubień</div>
+                        <div class="post-action">💬 37 komentarzy</div>
+                        <div class="post-action">🔄 12 udostępnień</div>
+                    </div>
+                </div>
+                
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="/api/placeholder/80/80" alt="Profile Avatar" class="post-avatar">
+                        <div>
+                            <p class="post-author">Nazwa Klubu</p>
+                            <p class="post-date">1 dzień temu</p>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Już jutro czeka nas ważny mecz! Kto wybiera się na stadion? Bilety wciąż dostępne w kasach i online. #GameDay #Support</p>
+                    </div>
+                    <div class="post-
