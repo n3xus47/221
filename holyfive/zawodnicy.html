@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawodnicy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .team-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .team-tab {
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .team-tab.active {
+            background-color: #333;
+            color: white;
+        }
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .player-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .player-card:hover {
+            transform: translateY(-5px);
+        }
+        .player-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        .player-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .player-info {
+            padding: 1.5rem;
+        }
+        .player-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .player-position {
+            color: #777;
+            margin: 0.5rem 0;
+        }
+        .player-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nazwa Klubu</h1>
+    </header>
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="zawodnicy.html">Zawodnicy</a>
+        <a href="socjale.html">Socjale</a>
+        <a href="akademia.html">Akademia</a>
+        <a href="aktualnosci.html">Aktualności</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <main>
+        <h2>Nasi zawodnicy</h2>
+        <p>Poznaj zespół, który reprezentuje nasze barwy w sezonie 2024/2025. Każdy z zawodników wnosi unikalne umiejętności i cechy osobowości, tworząc zgrany kolektyw, który walczy o najwyższe cele.</p>
+        
+        <div class="team-tabs">
+            <button class="team-tab active">Pierwsza Drużyna</button>
+            <button class="team-tab">Juniorzy</button>
+            <button class="team-tab">Sztab Szkoleniowy</button>
+        </div>
+        
+        <div class="player-grid">
+            <!-- Zawodnik 1 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Adam Malinowski</h3>
+                    <p class="player-position">Napastnik</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">10</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">25</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Gole</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zawodnik 2 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Piotr Kowalczyk</h3>
+                    <p class="player-position">Pomocnik</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">28</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Asysty</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zawodnik 3 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Michał Nowak</h3>
+                    <p class="player-position">Obrońca</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">30</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">20</div>
+                            <div class="stat-label">Występy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zawodnik 4 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Kamil Wójcik</h3>
+                    <p class="player-position">Bramkarz</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">32</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Czyste konta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zawodnik 5 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Robert Lewandowski</h3>
+                    <p class="player-position">Napastnik</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">9</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">26</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Gole</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Zawodnik 6 -->
+            <div class="player-card">
+                <div class="player-image">
+                    <img src="/api/placeholder/400/500" alt="Zdjęcie zawodnika">
+                </div>
+                <div class="player-info">
+                    <h3 class="player-name">Tomasz Zieliński</h3>
+                    <p class="player-position">Pomocnik</p>
+                    <div class="player-stats">
+                        <div class="stat">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Numer</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">24</div>
+                            <div class="stat-label">Wiek</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Asysty</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nazwa Klubu. Wszelkie prawa zastrzeżone.</p>
+    </footer>
 
+    <script>
+        // Prosty kod JavaScript do obsługi zakładek
+        const tabs = document.querySelectorAll(".team-tab");
+        
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                // Usuń klasę "active" ze wszystkich zakładek
+                tabs.forEach(t => t.classList.remove("active"));
+                // Dodaj klasę "active" do klikniętej zakładki
+                tab.classList.add("active");
+                
+                // Tutaj można dodać logikę do pokazywania różnych zestawów zawodników
+                // W pełnej implementacji należałoby pobrać dane z API lub zmienić wyświetlaną zawartość
+                // Na potrzeby demonstracji, po kliknięciu zmienia się tylko wygląd zakładek
+            });
+        });
+    </script>
+</body>
+</html>
