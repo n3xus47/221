@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .team-section {
+            margin-top: 2rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nazwa Klubu</h1>
+    </header>
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="zawodnicy.html">Zawodnicy</a>
+        <a href="socjale.html">Socjale</a>
+        <a href="akademia.html">Akademia</a>
+        <a href="aktualnosci.html">Aktualności</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <main>
+        <h2>O naszym klubie</h2>
+        
+        <div class="about-section">
+            <div class="about-text">
+                <p>Nasz klub sportowy został założony w [rok założenia] z pasją do [dyscyplina sportu] i determinacją, by rozwijać talenty na każdym poziomie zaawansowania. Od ponad [liczba] lat budujemy społeczność opartą na wartościach fair play, wzajemnym szacunku i dążeniu do doskonałości.</p>
+                
+                <p>Misją naszego klubu jest nie tylko osiąganie wyników sportowych na najwyższym poziomie, ale również wychowywanie młodych sportowców w duchu zdrowej rywalizacji i pracy zespołowej. Wierzymy, że sport to nie tylko rywalizacja, ale również droga do osobistego rozwoju i budowania charakteru.</p>
+                
+                <h3>Nasza misja</h3>
+                <p>Dążymy do stworzenia środowiska, w którym każdy zawodnik może rozwijać swoje umiejętności, realizować sportowe marzenia i czerpać radość z uprawiania sportu. Stawiamy na profesjonalizm w działaniu, ale również na przyjazną atmosferę, która sprzyja rozwojowi talentów.</p>
+            </div>
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="Zdjęcie drużyny">
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="Obiekt sportowy">
+            </div>
+            <div class="about-text">
+                <h3>Nasza historia</h3>
+                <p>Historia naszego klubu rozpoczęła się od małej grupy pasjonatów, którzy postanowili połączyć siły i stworzyć profesjonalny zespół. Z roku na rok nasza społeczność rosła, zdobywaliśmy kolejne sukcesy i rozwijaliśmy infrastrukturę.</p>
+                
+                <p>Dziś jesteśmy dumni z naszych osiągnięć, ale wciąż głodni nowych wyzwań. Każdy sezon to dla nas szansa na udowodnienie swojej wartości i pokazanie, że ciężka praca popłaca.</p>
+                
+                <h3>Nasze wartości</h3>
+                <ul>
+                    <li>Szacunek dla każdego członka społeczności</li>
+                    <li>Dążenie do doskonałości w każdym aspekcie działalności</li>
+                    <li>Praca zespołowa i wsparcie w trudnych momentach</li>
+                    <li>Odpowiedzialność za własne działania</li>
+                    <li>Pasja do sportu i radość z gry</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="team-section">
+            <h2>Kadra zarządzająca</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/api/placeholder/250/250" alt="Zdjęcie prezesa">
+                    <h3>Jan Kowalski</h3>
+                    <p>Prezes Klubu</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/250/250" alt="Zdjęcie wiceprezesa">
+                    <h3>Anna Nowak</h3>
+                    <p>Wiceprezes ds. Sportowych</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/250/250" alt="Zdjęcie trenera">
+                    <h3>Piotr Wiśniewski</h3>
+                    <p>Główny Trener</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/250/250" alt="Zdjęcie koordynatora">
+                    <h3>Magdalena Jabłońska</h3>
+                    <p>Koordynator Akademii</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Nazwa Klubu. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
