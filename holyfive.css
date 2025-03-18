@@ -5,10 +5,7 @@
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-*{  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- }
+
 
 .loading-container {
   background-color: black;
