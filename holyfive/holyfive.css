@@ -118,6 +118,7 @@ body {
 
 
 .nav-menu {
+    font-family: "Hoover-Variable";
   list-style-type:none;
   z-index: 3;
   gap:80px;
