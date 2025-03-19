@@ -345,7 +345,10 @@ h2 {
   font-weight: 400;
   font-style: normal;
   border-right: 5px solid;
-  width: 100%;
+  width: 0;
+  height:122;
+  line-height:122;
+  display: inline-block;
   white-space: nowrap;
   animation:
       typing 2s steps(9),
@@ -358,6 +361,7 @@ h2 {
 
 @keyframes typing { 
   from {width: 0 }
+  to { width: 100%}
 }
 
 .footer-separator {
