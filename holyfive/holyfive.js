@@ -30,3 +30,38 @@ document.addEventListener("scroll", function () {
     const translateY = (1 - scrollFraction) * windowHeight;
     banerSection.style.transform = `translateY(${translateY}px)`;
 });
+
+const video = document.getElementById('myVideo');
+
+  // Funkcja sprawdzająca, czy element jest widoczny na ekranie
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  
+  
+  
+  }
+
+  // Obsługa przewijania strony
+  function handleScroll() {
+    if (isElementInViewport(video)) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  // Ustawienie pętli
+  video.loop = true;
+
+  // Nasłuchiwanie przewijania
+  window.addEventListener('scroll', handleScroll);
+
+  // Sprawdzenie przy załadowaniu strony
+  document.addEventListener('DOMContentLoaded', handleScroll);
+</script>
