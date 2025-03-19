@@ -31,7 +31,7 @@ document.addEventListener("scroll", function () {
     banerSection.style.transform = `translateY(${translateY}px)`;
 });
 
-const video = document.getElementById('myVideo');
+const video = document.getElementById('hfhw');
 
   // Funkcja sprawdzająca, czy element jest widoczny na ekranie
   function isElementInViewport(el) {
@@ -64,4 +64,3 @@ const video = document.getElementById('myVideo');
 
   // Sprawdzenie przy załadowaniu strony
   document.addEventListener('DOMContentLoaded', handleScroll);
-</script>
