@@ -346,13 +346,11 @@ h2 {
   font-style: normal;
   border-right: 5px solid;
   width: 0;
-  height:122px;
-  line-height:122px;
   display: inline-block;
   white-space: nowrap;
   animation:
-      typing 2s steps(9),
-      cursor .4s step-end infinite alternate;
+      typing 10s steps(9),
+      cursor .20s step-end infinite alternate;
 }
 
 @keyframes cursor {
