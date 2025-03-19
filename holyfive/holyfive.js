@@ -23,8 +23,8 @@ document.addEventListener("scroll", function () {
     // Obliczanie pozycji przewijania (od 0 do 1 w zakresie 800 pikseli)
     const scrollFraction = Math.min(scrollPosition / 800, 1);
 
-    // Górna sekcja (wideo) ciemnieje o 40% (opacity od 1 do 0.4)
-    videoSection.style.opacity = 1 - scrollFraction * 0.6;
+    // Górna sekcja (wideo) ciemnieje o 40% (opacity od 1 do 0.6)
+    videoSection.style.opacity = 1 - scrollFraction * 0.4;
 
     // Dolna sekcja (baner) przesuwa się w górę, "najeżdżając" na wideo
     const translateY = (1 - scrollFraction) * windowHeight;
