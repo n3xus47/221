@@ -335,15 +335,19 @@ video {
   height: 100%;
 }
 
-h2 {
-  color: #6A7EFC;
-  font-size: 80px;
+#myVideo {
+  color: #6A7EFC; /* Kolor nie wpłynie na wideo, ale zostawiam dla spójności */
+  font-size: 80px; /* Nie wpłynie bezpośrednio, ale może być odniesieniem dla rozmiaru */
   margin-bottom: 25px;
-  text-align: center;
+  text-align: center; /* Wyrównanie dla potencjalnych napisów w wideo */
   margin-top: 0;
-  font-family: "Mrs Saint Delafield", cursive;
-  font-weight: 400;
-  font-style: normal;
+  font-family: "Mrs Saint Delafield", cursive; /* Nie wpłynie na wideo */
+  font-weight: 400; /* Nie wpłynie na wideo */
+  font-style: normal; /* Nie wpłynie na wideo */
+  width: 100%; /* Dopasowanie do kontenera */
+  max-width: 221px; /* Przykładowa szerokość – dostosuj do potrzeb */
+  height: auto; /* Zachowanie proporcji wideo */
+  object-fit: contain; /* Zachowanie pełnej widoczności wideo */
 }
 
 .footer-separator {
