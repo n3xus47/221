@@ -1,18 +1,32 @@
-    window.addEventListener('load', function() {
-      // Symulacja opóźnienia ładowania (możesz usunąć setTimeout jeśli nie chcesz dodatkowego opóźnienia)
-      setTimeout(function() {
+// Ekran ładowania
+window.addEventListener('load', function() {
+    setTimeout(function() {
         const loadingScreen = document.getElementById('loadingScreen');
         const pageContent = document.getElementById('pageContent');
         
-        // Ukryj ekran ładowania
         loadingScreen.classList.add('hidden');
-        
-        // Pokaż zawartość strony
         pageContent.classList.remove('hidden');
         
-        // Po zakończeniu animacji, usuń ekran ładowania z DOM
         setTimeout(function() {
-          loadingScreen.style.display = 'none';
-        }, 400); // Czas powinien być równy czasowi trwania animacji
-      }, 1500); // Symulowane opóźnienie 1.5s, dostosuj według potrzeb
-    });
+            loadingScreen.style.display = 'none';
+        }, 400);
+    }, 1500);
+});
+
+// Animacja przewijania między video a baner-bar-footer-container
+document.addEventListener("scroll", function () {
+    const videoSection = document.querySelector(".video-section");
+    const banerSection = document.querySelector(".baner-bar-footer-container");
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Obliczanie pozycji przewijania (od 0 do 1 w zakresie 800 pikseli)
+    const scrollFraction = Math.min(scrollPosition / 800, 1);
+
+    // Górna sekcja (wideo) ciemnieje o 40% (opacity od 1 do 0.4)
+    videoSection.style.opacity = 1 - scrollFraction * 0.6;
+
+    // Dolna sekcja (baner) przesuwa się w górę, "najeżdżając" na wideo
+    const translateY = (1 - scrollFraction) * windowHeight;
+    banerSection.style.transform = `translateY(${translateY}px)`;
+});
