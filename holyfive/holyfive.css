@@ -346,20 +346,6 @@ h2 {
   font-style: normal;
 }
 
-h2:hover {
-width: 100%;
-overflow: hidden;
-white-space: nowrap;
-animation:typing 4s;
-}
-  
-
-
-@keyframes typing { 
-  from {width: 0 }
-  to { width: 100%}
-}
-
 .footer-separator {
   width: 50%;
   height: 1px;
