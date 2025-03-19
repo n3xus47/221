@@ -344,6 +344,20 @@ h2 {
   font-family: "Mrs Saint Delafield", cursive;
   font-weight: 400;
   font-style: normal;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  animation:
+      typing 2s steps(9),
+      cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {border-color: transparent }
+}
+
+@keyframes typing { 
+  from {width: 0 }
 }
 
 .footer-separator {
