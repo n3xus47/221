@@ -345,10 +345,12 @@ h2 {
   font-weight: 400;
   font-style: normal;
   border-right: 5px solid;
+  width: 100%;
+  overflow: hidden;
   white-space: nowrap;
   animation:
-      typing 10s steps(9),
-      cursor .20s step-end infinite alternate;
+  typing 2s steps(9),
+  cursor .4s step-end infinite alternate;
 }
 
 @keyframes cursor {
