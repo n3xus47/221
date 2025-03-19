@@ -183,11 +183,10 @@ video {
 .h3 {
   font-size: 14px;
   font-family: "JetBrains Mono", monospace;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   text-align: center;
   color: #464646;
-  margin: 0 50px;
   position: absolute;
   bottom: -35px;
   width: 100%;
