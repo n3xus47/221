@@ -1,0 +1,445 @@
+/* Główne style dla strony zawodnicy */
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.players-main {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: "Hoover-Variable", sans-serif;
+    text-align: center;
+    color: #000;
+    margin: 40px 0;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Style dla kontenerów z zawodnikami */
+.players-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin: 40px 0 70px;
+}
+
+.main-players, .reserve-players {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Style dla kart zawodników */
+.player-card {
+    width: 450px;
+    height: 750px;
+    position: relative;
+    perspective: 1000px;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.player-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efekt czerwonej poświaty przy najechaniu */
+.player-card:hover .card-inner {
+    box-shadow: 0 0 30px rgba(255, 49, 49, 0.5);
+    transform: translateX(-140px);
+}
+
+/* Efekt lśniącego paska przy najechaniu */
+.player-card:hover .card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 0.8s forwards;
+    z-index: 9;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Zdjęcie kota */
+.player-image {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.player-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    animation: glitchEffect 6s infinite;
+}
+
+.player-card:hover .player-image img {
+    transform: scale(1.05);
+}
+
+/* Animacja glitch */
+@keyframes glitchEffect {
+    0%, 100% {
+        filter: none;
+        transform: none;
+    }
+    
+    98% {
+        filter: none;
+        transform: none;
+    }
+    
+    98.5% {
+        filter: brightness(1.2) contrast(1.5) hue-rotate(5deg);
+        transform: translate(2px, 0);
+    }
+    
+    99% {
+        filter: brightness(0.8) contrast(1.2) hue-rotate(-5deg);
+        transform: translate(-2px, 0);
+    }
+    
+    99.5% {
+        filter: brightness(1.5) contrast(0.8) hue-rotate(10deg);
+        transform: translate(0, 2px);
+    }
+}
+
+.player-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.1);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.player-card:hover .player-image::before {
+    opacity: 1;
+}
+
+/* Informacje o zawodniku */
+.player-info {
+    padding: 25px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.player-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #000 0%, #ff3131 50%, #000 100%);
+    z-index: 2;
+}
+
+.player-text {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-info h2 {
+    margin: 0 0 15px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Hoover-Variable", sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.social-link:hover {
+    color: #ff3131;
+}
+
+.social-link i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.logo-small {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+    filter: brightness(0) invert(1);
+}
+
+/* Statystyki gracza */
+.player-stats {
+    position: absolute;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
+}
+
+.player-card:hover .player-stats {
+    opacity: 1;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-family: "Hoover-Variable", sans-serif;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #ff3131;
+    font-size: 20px;
+}
+
+/* Style dla tabeli statystyk */
+.stats-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0 60px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-family: "Hoover-Variable", sans-serif;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-table th {
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.stats-table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.stats-table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+.stats-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.stats-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.stats-table td:first-child {
+    font-weight: bold;
+    color: #ff3131;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .player-card {
+        width: 90%;
+        max-width: 400px;
+        height: 650px;
+    }
+    
+    .player-image {
+        height: 450px;
+    }
+    
+    .player-info {
+        height: 200px;
+        padding: 20px;
+    }
+    
+    .player-info h2 {
+        font-size: 24px;
+    }
+    
+    .social-link {
+        font-size: 16px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .logo-small {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .player-card:hover .card-inner {
+        transform: translateX(-120px);
+    }
+    
+    .player-stats {
+        right: -240px;
+        width: 240px;
+        padding: 30px 20px;
+    }
+    
+    .stat-item {
+        margin-bottom: 20px;
+    }
+    
+    .stat-label {
+        font-size: 16px;
+    }
+    
+    .stat-value {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-card {
+        width: 100%;
+        height: 550px;
+    }
+    
+    .player-image {
+        height: 350px;
+    }
+    
+    .player-info {
+        height: 200px;
+        padding: 15px;
+    }
+    
+    .player-info h2 {
+        font-size: 20px;
+    }
+    
+    .player-card:hover .card-inner {
+        transform: translateX(-100px);
+    }
+    
+    .player-stats {
+        right: -200px;
+        width: 200px;
+        padding: 25px 15px;
+    }
+    
+    .stat-item {
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    
+    .logo-small {
+        width: 40px;
+        height: 40px;
+    }
+} 
