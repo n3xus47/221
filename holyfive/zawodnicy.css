@@ -10,7 +10,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+.section-title {
+    text-align: center;
+    height: 100vh; /* Ustaw wysokość na 100% wysokości okna przeglądarki */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Usuń margines */
+}
 .section-title {
     font-family: "Hoover-Variable", sans-serif;
     text-align: center;
