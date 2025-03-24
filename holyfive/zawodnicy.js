@@ -1,15 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const statsContainer = document.querySelector('.stats-container');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
 
-    function checkVisibility() {
-        const rect = statsContainer.getBoundingClientRect();
-        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const playerCards = document.querySelectorAll('.player-card');
+    playerCards.forEach(card => {
+        observer.observe(card);
+    });
 
-        if (rect.top <= windowHeight && rect.bottom >= 0) {
-            statsContainer.classList.add('visible');
-        }
-    }
+    // Obsługa ładowania strony
+    const loadingScreen = document.getElementById('loadingScreen');
+    const pageContent = document.getElementById('pageContent');
 
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Sprawdź widoczność na wypadek, gdyby element był już widoczny
+    // Symulacja ładowania
+    setTimeout(() => {
+        loadingScreen.classList.add('leave-transition');
+        loadingScreen.classList.add('hidden');
+        pageContent.classList.remove('hidden');
+
+        // Po pokazaniu zawartości uruchamiamy animacje kart
+        setTimeout(() => {
+            playerCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, index * 150); // Opóźnienie między kolejnymi kartami
+            });
+        }, 300);
+    }, 800);
 });
