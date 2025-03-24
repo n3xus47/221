@@ -752,22 +752,11 @@
                 return hashHex;
             }
             
-            // Sample news data
-            const initialNews = [
-                {
-                    title: "Nowy zawodnik w Holy Five",
-                    content: "Do naszego składu League of Legends dołącza Marcin 'Wildcat' Kowalski! Ten utalentowany zawodnik, znany z niezwykłych umiejętności na pozycji mid, przechodzi do nas z drużyny European Masters. W poprzednim sezonie Wildcat był jednym z najlepiej ocenianych graczy w swoim regionie, a jego statystyki mówią same za siebie: średnio 5.7 KDA i udział w 72% zabójstw swojej drużyny. Marcin już rozpoczął treningi z zespołem i zobaczycie go w akcji podczas nadchodzących rozgrywek LEC Summer Split. Witamy na pokładzie!",
-                    date: "01.03.2025",
-                    author: "Zarząd Holy Five",
-                    hashtag: "Transfer"
-                }
-            ];
-            
             // Funkcja do renderowania wiadomości
             function renderNews() {
                 // Pobierz zapisane posty z localStorage lub użyj domyślnych
                 const savedNews = localStorage.getItem('holyFiveNews');
-                const newsData = savedNews ? JSON.parse(savedNews) : initialNews;
+                const newsData = savedNews ? JSON.parse(savedNews) : [];
                 
                 // Wyczyść listę
                 newsList.innerHTML = '';
@@ -832,7 +821,7 @@
             function editPost(index) {
                 // Pobierz aktualne posty
                 const savedNews = localStorage.getItem('holyFiveNews');
-                const newsData = savedNews ? JSON.parse(savedNews) : initialNews;
+                const newsData = savedNews ? JSON.parse(savedNews) : [];
                 const post = newsData[index];
                 
                 // Wypełnij formularz edycji
@@ -850,7 +839,7 @@
                 if (confirm('Czy na pewno chcesz usunąć ten post?')) {
                     // Pobierz aktualne posty
                     const savedNews = localStorage.getItem('holyFiveNews');
-                    let newsData = savedNews ? JSON.parse(savedNews) : initialNews;
+                    let newsData = savedNews ? JSON.parse(savedNews) : [];
                     
                     // Usuń post
                     newsData.splice(index, 1);
@@ -927,7 +916,7 @@
                 
                 // Pobierz aktualne posty
                 const savedNews = localStorage.getItem('holyFiveNews');
-                let newsData = savedNews ? JSON.parse(savedNews) : initialNews;
+                let newsData = savedNews ? JSON.parse(savedNews) : [];
                 
                 // Dodaj nowy post na początek tablicy
                 newsData.unshift(newPost);
@@ -987,7 +976,7 @@
                 
                 // Pobierz aktualne posty
                 const savedNews = localStorage.getItem('holyFiveNews');
-                let newsData = savedNews ? JSON.parse(savedNews) : initialNews;
+                let newsData = savedNews ? JSON.parse(savedNews) : [];
                 
                 // Aktualizuj post
                 newsData[index].title = title;
