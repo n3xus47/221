@@ -1,494 +1,660 @@
-/* Główne style dla strony zawodnicy */
+/* Podstawowe style */
 body {
-    background-color: white;
+    font-family: 'Esteban', serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    overflow-x: hidden;
+    height: 500vh; /* Zwiększam wysokość z 450vh na 500vh, aby zapewnić więcej miejsca */
 }
 
-.players-main {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Kontener dla głównego ekranu */
+.content {
+    position: relative;
+    min-height: 500vh; /* Zwiększam wysokość z 450vh na 500vh, aby zapewnić więcej miejsca */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Dodaję, aby footer znalazł się na dole */
 }
+
+/* Dodaję styl dla elementu spacer */
+.spacer {
+    flex-grow: 1; /* Element będzie się rozciągał, aby wypełnić dostępną przestrzeń */
+    min-height: 250vh; /* Zwiększam wysokość z 225vh na 250vh, aby zapewnić więcej miejsca */
+}
+
+/* Element odstępu między headerem a main */
+.header-main-spacing {
+    height: 50px; /* Wysokość odstępu */
+    width: 100%;
+    background-color: #f0f0f0; /* Ten sam kolor co tło strony */
+}
+
+/* Styl dla top-header i headera */
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 50; /* Zwiększam z-index, aby header nachodził na main przy scrollowaniu */
+    width: 100%;
+}
+
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    height: calc(100vh - 128px); /* Wysokość widoku minus wysokość headera */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 128px; /* Wysokość headera */
+    z-index: 25; /* Zwiększam z-index, aby main był nad footerem */
+    margin-bottom: 200px; /* Dodaję margines na dole, aby zapewnić odpowiedni odstęp od footera */
+}
+
 .section-title {
     text-align: center;
-    height: 100vh; /* Ustaw wysokość na 100% wysokości okna przeglądarki */
+    font-size: 10rem;
+    margin: 40px 0;
+    color: #333;
+    font-family: 'Racing Sans One', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    white-space: nowrap;
+    transition: opacity 0.3s ease; /* Dodaję płynne przejście dla efektu zanikania */
+}
+
+/* Kontener dla karty zawodnika */
+.player-container {
+    position: absolute;
+    width: 450px;
+    height: 580px; /* Dodaję konkretną wysokość dla wszystkich kontenerów */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Usuń margines */
-}
-.section-title {
-    font-family: "Hoover-Variable", sans-serif;
-    text-align: center;
-    color: #000;
-    margin: 40px 0;
-    font-size: 300px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Style dla kontenerów z zawodnikami */
-.players-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    margin: 40px 0 70px;
-}
-
-.main-players, .reserve-players {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-}
-
-/* Style dla kart zawodników */
-.player-card {
-    width: 450px;
-    height: 750px;
-    position: relative;
-    perspective: 1000px;
-    overflow: visible;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform-origin: center center; /* Dodaję punkt odniesienia transformacji */
 }
 
-.player-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Style z-index dla kart zawodników */
+#playerCard {
+    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
 }
 
-.card-inner {
-    width: 100%;
-    height: 100%;
+/* Specyficzne style dla karty nr 2 */
+#playerCard2 {
+    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+}
+
+/* Specyficzne styles dla karty nr 3 */
+#playerCard3 {
+    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+}
+
+/* Specyficzne styles dla karty nr 4 */
+#playerCard4 {
+    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+}
+
+/* Specyficzne styles dla karty nr 5 */
+#playerCard5 {
+    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+}
+
+/* Style dla interakcji z kartami - hover */
+#playerCard .player-card,
+#playerCard2 .player-card,
+#playerCard3 .player-card,
+#playerCard4 .player-card,
+#playerCard5 .player-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Upewniamy się, że elementy wewnątrz kontenera mają wyższy z-index */
+}
+
+#playerCard .player-card:hover,
+#playerCard2 .player-card:hover,
+#playerCard3 .player-card:hover,
+#playerCard4 .player-card:hover,
+#playerCard5 .player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    z-index: 30; /* Zwiększam z-index podczas hover z 20 na 30, żeby karta była na wierzchu */
+}
+
+#playerCard .player-card:hover .player-image img,
+#playerCard2 .player-card:hover .player-image img,
+#playerCard3 .player-card:hover .player-image img,
+#playerCard4 .player-card:hover .player-image img,
+#playerCard5 .player-card:hover .player-image img {
+    transform: scale(1.05);
+}
+
+/* Karta zawodnika */
+.player-card {
+    width: 450px; /* Zwiększam szerokość karty z 400px na 450px */
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-/* Efekt czerwonej poświaty przy najechaniu */
-.player-card:hover .card-inner {
-    box-shadow: 0 0 30px rgba(255, 49, 49, 0.5);
-    transform: translateX(-140px);
+.player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Efekt lśniącego paska przy najechaniu */
-.player-card:hover .card-inner::before {
-    content: '';
+.shiny-bar {
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-25deg);
-    animation: shine 0.8s forwards;
-    z-index: 9;
-    pointer-events: none;
-    mix-blend-mode: overlay;
-}
-
-@keyframes shine {
-    0% {
-        left: -100%;
-    }
-    100% {
-        left: 150%;
-    }
-}
-
-/* Zdjęcie kota */
-.player-image {
+    left: 0;
     width: 100%;
-    height: 550px;
+    height: 10px; /* Zwiększam wysokość paska z 8px na 10px */
+    /* Kolory w pasku gradientowym: #ff3131 (czerwony), #6A7EFC (niebieski) - kolory marki */
+    background: linear-gradient(90deg, #ff3131, #6A7EFC, #ff3131);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Wyrównanie wysokości .card-inner dla wszystkich kart */
+.card-inner {
+    padding: 25px;
+    box-sizing: border-box;
+    min-height: 480px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Specyficzne style dla card-inner w kartach 3 i 4 */
+#playerCard3 .card-inner,
+#playerCard4 .card-inner,
+#playerCard .card-inner,
+#playerCard2 .card-inner,
+#playerCard5 .card-inner {
+    padding: 25px;
+    min-height: 480px;
+    height: 480px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* Dopasowanie elementów wewnątrz .card-inner */
+.player-image {
+    height: 350px; /* Zwiększam wysokość obrazu z 300px na 350px */
     overflow: hidden;
-    position: relative;
+    border-radius: 10px; /* Zwiększam zaokrąglenie z 8px na 10px */
+    margin-bottom: 25px; /* Zwiększam odstęp z 20px na 25px */
+    flex-shrink: 0; /* Zapobiega skurczeniu przy zmianie rozmiaru */
 }
 
 .player-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    animation: glitchEffect 6s infinite;
+    transition: transform 0.5s ease;
 }
 
 .player-card:hover .player-image img {
     transform: scale(1.05);
 }
 
-/* Animacja glitch 
-@keyframes glitchEffect {
-    0%, 100% {
-        filter: none;
-        transform: none;
-    }
-    
-    98% {
-        filter: none;
-        transform: none;
-    }
-    
-    98.5% {
-        filter: brightness(1.2) contrast(1.5) hue-rotate(5deg);
-        transform: translate(2px, 0);
-    }
-    
-    99% {
-        filter: brightness(0.8) contrast(1.2) hue-rotate(-5deg);
-        transform: translate(-2px, 0);
-    }
-    
-    99.5% {
-        filter: brightness(1.5) contrast(0.8) hue-rotate(10deg);
-        transform: translate(0, 2px);
-    }
-}
-*/
-.player-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.1);
-    mix-blend-mode: overlay;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.player-card:hover .player-image::before {
-    opacity: 1;
-}
-
-/* Informacje o zawodniku */
 .player-info {
-    padding: 25px;
-    background-color: #000;
-    color: white;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    height: 200px;
-    box-sizing: border-box;
-    border-radius: 0 0 10px 10px;
-}
-
-.player-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-shrink: 0;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #000 0%, #ff3131 50%, #000 100%);
-    z-index: 2;
+    box-sizing: border-box;
 }
 
 .player-text {
     flex: 1;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-right: 10px;
+    min-width: 0;
 }
 
-.player-info h2 {
-    margin: 0 0 15px;
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    font-family: "Hoover-Variable", sans-serif;
-    position: relative;
-    z-index: 2;
+#playerCard .player-info,
+#playerCard2 .player-info,
+#playerCard3 .player-info,
+#playerCard4 .player-info,
+#playerCard5 .player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#playerCard .player-text,
+#playerCard2 .player-text,
+#playerCard3 .player-text,
+#playerCard4 .player-text,
+#playerCard5 .player-text {
+    flex: 1;
+    padding-right: 10px;
+    min-width: 0;
+}
+
+.player-text h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem; /* Zmniejszona czcionka z 1.8rem na 1.4rem */
+    font-weight: 700;
+    color: #333;
+    width: 100%;
+    white-space: nowrap; /* Tekst zawsze w jednej linii */
+    overflow: hidden; /* Ukryj tekst, który się nie mieści */
+    text-overflow: ellipsis; /* Dodaj kropki na końcu tekstu, który się nie mieści */
+}
+
+/* Specyficzne style dla h2 we wszystkich kartach */
+#playerCard .player-text h2,
+#playerCard2 .player-text h2,
+#playerCard3 .player-text h2,
+#playerCard4 .player-text h2,
+#playerCard5 .player-text h2 {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#playerCard .social-link,
+#playerCard3 .social-link,
+#playerCard4 .social-link,
+#playerCard5 .social-link {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+#playerCard .social-link:hover,
+#playerCard3 .social-link:hover,
+#playerCard4 .social-link:hover,
+#playerCard5 .social-link:hover {
+    color: #ff3131; /* Czerwony kolor z marki */
 }
 
 .social-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    color: #ccc;
+    color: #777;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
-    position: relative;
-    z-index: 2;
 }
 
 .social-link:hover {
-    color: #ff3131;
+    color: #ff3131; /* Czerwony kolor z marki */
 }
 
 .social-link i {
-    margin-right: 8px;
-    font-size: 20px;
+    margin-right: 5px;
 }
 
 .logo-small {
     width: 60px;
     height: 60px;
-    margin-left: 15px;
-    filter: brightness(0) invert(1);
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: 10px;
+    align-self: flex-start;
 }
 
-/* Statystyki gracza */
+#playerCard .logo-small,
+#playerCard2 .logo-small,
+#playerCard3 .logo-small,
+#playerCard4 .logo-small,
+#playerCard5 .logo-small {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: 10px;
+    align-self: flex-start;
+}
+
 .player-stats {
-    position: absolute;
-    top: 0;
-    right: -280px;
-    width: 280px;
-    height: 100%;
-    background-color: white;
-    border-radius: 10px;
-    padding: 40px 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-sizing: border-box;
-}
-
-.player-card:hover .player-stats {
-    opacity: 1;
+    background-color: #f9f9f9;
+    padding: 25px; /* Zwiększam padding z 20px na 25px */
+    border-radius: 0 0 10px 10px;
 }
 
 .stat-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
-    font-family: "Hoover-Variable", sans-serif;
+    margin-bottom: 12px; /* Zwiększam odstęp z 10px na 12px */
+}
+
+.stat-item:last-child {
+    margin-bottom: 0;
 }
 
 .stat-label {
     font-weight: 600;
-    color: #333;
-    font-size: 18px;
+    color: #666;
+    font-size: 1.2rem; /* Zwiększam rozmiar czcionki z 1.1rem na 1.2rem */
 }
 
 .stat-value {
     font-weight: 700;
-    color: #ff3131;
-    font-size: 20px;
+    color: #ff3131; /* Zmieniam kolor na czerwony z marki */
+    font-size: 1.3rem; /* Zwiększam rozmiar czcionki z 1.2rem na 1.3rem */
 }
 
-/* Style dla tabeli statystyk */
-.stats-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 30px 0 60px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 10px;
-}
-
-.stats-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    font-family: "Hoover-Variable", sans-serif;
-}
-
-.stats-table th,
-.stats-table td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.stats-table th {
-    background-color: #000;
+/* Style dla przycisków akcji */
+.action-button {
+    padding: 12px 20px;
+    background-color: #ff3131;
     color: white;
-    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Racing Sans One', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
-    font-size: 14px;
     letter-spacing: 1px;
 }
 
-.stats-table th:first-child {
-    border-top-left-radius: 10px;
+/* Styl dla kontenera przycisków */
+#actionButtons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 60px auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 40;
+    width: 100%;
+    max-width: 100%;
+    left: auto;
+    transform: none;
 }
 
-.stats-table th:last-child {
-    border-top-right-radius: 10px;
+.action-button:hover {
+    background-color: #e01f1f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.stats-table tr:last-child td {
-    border-bottom: none;
+.action-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.stats-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Modal styles dla okienek informacyjnych */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
 }
 
-.stats-table tr:hover {
-    background-color: #f5f5f5;
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.4s ease;
 }
 
-.stats-table td:first-child {
-    font-weight: bold;
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
     color: #ff3131;
 }
 
-/* Responsywność */
-@media (max-width: 768px) {
-    .player-card {
-        width: 90%;
-        max-width: 400px;
-        height: 650px;
-    }
-    
-    .player-image {
-        height: 450px;
-    }
-    
-    .player-info {
-        height: 200px;
-        padding: 20px;
-    }
-    
-    .player-info h2 {
-        font-size: 24px;
-    }
-    
-    .social-link {
-        font-size: 16px;
-    }
-    
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .logo-small {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .player-card:hover .card-inner {
-        transform: translateX(-120px);
-    }
-    
-    .player-stats {
-        right: -240px;
-        width: 240px;
-        padding: 30px 20px;
-    }
-    
-    .stat-item {
-        margin-bottom: 20px;
-    }
-    
-    .stat-label {
-        font-size: 16px;
-    }
-    
-    .stat-value {
-        font-size: 18px;
-    }
+.modal-title {
+    font-family: 'Racing Sans One', sans-serif;
+    font-size: 2.2rem;
+    color: #ff3131;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
 }
 
-@media (max-width: 576px) {
-    .player-card {
-        width: 100%;
-        height: 550px;
-    }
-    
-    .player-image {
-        height: 350px;
-    }
-    
-    .player-info {
-        height: 200px;
-        padding: 15px;
-    }
-    
-    .player-info h2 {
-        font-size: 20px;
-    }
-    
-    .player-card:hover .card-inner {
-        transform: translateX(-100px);
-    }
-    
-    .player-stats {
-        right: -200px;
-        width: 200px;
-        padding: 25px 15px;
-    }
-    
-    .stat-item {
-        margin-bottom: 15px;
-        font-size: 14px;
-    }
-    
-    .logo-small {
-        width: 40px;
-        height: 40px;
-    }
-    .player-card:hover .card-inner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.4) 50%,
-            rgba(255, 255, 255, 0) 100%
-        );
-        transform: skewX(-25deg);
-        animation: shine 0.8s forwards;
-        z-index: 9;
-        pointer-events: none;
-        mix-blend-mode: overlay;
-    }
-    
-    @keyframes shine {
-        0% {
-            left: -100%;
-        }
-        100% {
-            left: 150%;
-        }
-    }
-    .stats-container {
+.modal-body {
+    font-family: 'Esteban', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+@keyframes modalAppear {
+    from {
         opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        transform: translateY(-50px);
     }
-    
-    .stats-container.visible {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
-   
+}
 
+/* Responsive styles dla przycisków i modali */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 7rem;
+    }
+    
+    .holy-five-title {
+        font-size: 6rem;
+    }
+    
+    main {
+        height: calc(100vh - 100px); /* Mniejsza wysokość headera na urządzeniach mobilnych */
+        top: 100px; /* Dostosowuję top do wysokości headera na mobilnych */
+        padding: 15px;
+    }
+    
+    .player-card {
+        width: 380px; /* Zwiększam rozmiar dla tablet (z 350px na 380px) */
+    }
+    
+    .player-image {
+        height: 280px; /* Dostosowuję wysokość obrazu (z 250px na 280px) */
+    }
+    
+    .player-container {
+        width: 380px; /* Dopasowanie do szerokości karty na tabletach */
+        height: 510px; /* Dopasowanie wysokości na tabletach */
+    }
+    
+    .card-inner {
+        min-height: 410px; /* Dostosowanie minimalnej wysokości dla tabletów */
+        height: 410px; /* Dostosowanie stałej wysokości dla tabletów */
+    }
+    
+    #playerCard3 .card-inner,
+    #playerCard4 .card-inner {
+        min-height: 410px;
+        height: 410px;
+    }
+    
+    .action-button {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    #actionButtons {
+        bottom: 30px !important;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+}
 
-} 
+@media (max-width: 480px) {
+    main {
+        padding: 15px 10px;
+        height: calc(100vh - 80px); /* Jeszcze mniejsza wysokość headera na bardzo małych urządzeniach */
+        top: 80px; /* Dostosowuję top do wysokości headera na bardzo małych urządzeniach */
+    }
+    
+    .section-title {
+        font-size: 5rem;
+    }
+    
+    .holy-five-title {
+        font-size: 4rem;
+        letter-spacing: 2px;
+    }
+    
+    .player-card {
+        width: 320px; /* Zwiększam rozmiar dla telefonu (z 300px na 320px) */
+    }
+    
+    .player-image {
+        height: 220px; /* Dostosowuję wysokość obrazu (z 200px na 220px) */
+    }
+    
+    .player-text h2 {
+        font-size: 1.2rem; /* Jeszcze mniejsza czcionka na telefonach */
+    }
+    
+    .player-container {
+        width: 320px; /* Dopasowanie do szerokości karty na telefonach */
+        height: 450px; /* Dopasowanie wysokości na telefonach */
+    }
+    
+    .card-inner {
+        min-height: 350px; /* Dostosowanie minimalnej wysokości dla telefonów */
+        height: 350px; /* Dostosowanie stałej wysokości dla telefonów */
+    }
+    
+    #playerCard3 .card-inner,
+    #playerCard4 .card-inner {
+        min-height: 350px;
+        height: 350px;
+    }
+    
+    .action-button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    #actionButtons {
+        bottom: 20px !important;
+        gap: 10px !important;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
 
+#playerCard, #playerCard2, #playerCard3, #playerCard4, #playerCard5 {
+    pointer-events: auto;
+}
+
+/* Footer pojawi się po całym body */
+.footer {
+    position: relative;
+    margin-top: 0; /* Usuwam margin-top, aby footer pojawiał się naturalnie po zawartości */
+    z-index: 10; /* Ustawiam niższy z-index niż main */
+    background-color: black; /* Pozostawiam tło, aby footer był bardziej widoczny */
+    width: 100%;
+    margin-top: auto; /* Dodaję auto, aby footer był na samym dole */
+}
+
+/* Styl dla dużego napisu HOLY FIVE */
+.holy-five-title {
+    position: relative;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9rem;
+    font-weight: 900;
+    color: #ff3131;
+    font-family: 'Racing Sans One', sans-serif;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 30;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 1s ease, transform 1s ease;
+    white-space: nowrap;
+    letter-spacing: 4px;
+    pointer-events: none;
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.holy-five-title.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    animation: titlePulse 2s infinite alternate;
+}
+
+@keyframes titlePulse {
+    0% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        transform: translateX(-50%) scale(1);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 49, 49, 0.8), 0 0 30px rgba(255, 49, 49, 0.4);
+        transform: translateX(-50%) scale(1.05);
+    }
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
