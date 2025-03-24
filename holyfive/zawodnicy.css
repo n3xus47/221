@@ -27,16 +27,7 @@ body {
     margin: 0 auto;
 }
 
-.section-title {
-    font-family: "Hoover-Variable", sans-serif;
-    text-align: center;
-    color: #000;
-    margin: 40px 0;
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+
 
 /* Style dla kontenerów z zawodnikami */
 .players-container {
