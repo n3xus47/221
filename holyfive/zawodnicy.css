@@ -480,7 +480,8 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-    /* Animacja pisania tekstu */
+   
+/* Animacja pisania tekstu */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -497,13 +498,10 @@ body {
     white-space: nowrap; /* Zapobiegaj zawijaniu tekstu */
     margin: 0 auto; /* Centrum tekstu */
     letter-spacing: .15em; /* Odstęp między literami */
-    width: 0; /* Ukryj tekst na początku */
-    transition: width 0s; /* Brak przejścia na początku */
+    animation: none; /* Brak animacji na początku */
 }
 
 .player-card.visible .player-text h2 {
-    width: 100%; /* Pokaż tekst, gdy karta jest widoczna */
-    transition: width 3.5s steps(40, end); /* Dodaj przejście */
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
