@@ -470,5 +470,15 @@ body {
             left: 150%;
         }
     }
+    .stats-container {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .stats-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 } 
 
