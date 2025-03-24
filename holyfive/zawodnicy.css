@@ -480,5 +480,34 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+    /* Animacja pisania tekstu */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+.player-text h2 {
+    overflow: hidden; /* Ukryj tekst, który nie mieści się w kontenerze */
+    border-right: .15em solid black; /* Dodaj kursor */
+    white-space: nowrap; /* Zapobiegaj zawijaniu tekstu */
+    margin: 0 auto; /* Centrum tekstu */
+    letter-spacing: .15em; /* Odstęp między literami */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.player-card .player-text h2 {
+    width: 0; /* Ukryj tekst na początku */
+    transition: width 0s; /* Brak przejścia na początku */
+}
+
+.player-card.visible .player-text h2 {
+    width: 100%; /* Pokaż tekst, gdy karta jest widoczna */
+    transition: width 3.5s steps(40, end); /* Dodaj przejście */
+}
 } 
 
