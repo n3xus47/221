@@ -126,7 +126,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Animacja glitch */
+/* Animacja glitch 
 @keyframes glitchEffect {
     0%, 100% {
         filter: none;
@@ -153,7 +153,7 @@ body {
         transform: translate(0, 2px);
     }
 }
-
+*/
 .player-image::before {
     content: '';
     position: absolute;
