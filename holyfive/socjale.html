@@ -13,7 +13,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=My+Soul&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Esteban&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <title>Socjale</title>    
+    <style>
+        @font-face {
+            font-family: 'BloodCrow';
+            src: url('path/to/bloodcrow.ttf') format('truetype');
+        }
+
+        @keyframes mysteriousReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shadowCreep {
+            0% {
+                text-shadow: 2px 2px 4px #000000;
+            }
+            50% {
+                text-shadow: 4px 4px 8px #000000;
+            }
+            100% {
+                text-shadow: 6px 6px 12px #000000;
+            }
+        }
+
+        @keyframes creepyGlow {
+            0% {
+                text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+            }
+            50% {
+                text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000, 0 0 24px #ff0000, 0 0 30px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+            }
+        }
+
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text color for contrast */
+        }
+
+        .profile {
+            display: flex;
+            justify-content: space-between;
+            height: calc(100vh - 250px); /* Adjust height to account for footer */
+            align-items: flex-start;
+            margin-top: 50px; /* Add margin between header and main */
+            margin-bottom: 50px; /* Add margin between main and footer */
+        }
+        .section-left, .section-central, .section-right {
+            flex: 1; /* Distribute columns evenly */
+            text-align: center;
+        }
+        .profile h3 {
+            font-size: 2em; /* Revert to previous font size */
+            font-weight: bold; /* Bold text */
+            margin-bottom: 1em; /* Add spacing between elements */
+            color: #ff3131; /* Change nickname color to #ff3131 */
+            font-family: 'Bebas Neue', 'Tektur', sans-serif; /* Apply Bebas Neue and Tektur fonts */
+            position: relative;
+            text-shadow: 2px 2px 4px #000000; /* Add shadow for depth */
+        }
+        .profile .icons i {
+            font-size: 1.5em; /* Increase icon size by 0.5 times */
+        }
+        footer.footer {
+            margin-top: -150px; /* Ensure footer is visible */
+        }
+        h1.title {
+            font-size: 9em; /* Increase title size by 1.5 times again */
+            color: #8B0000; /* Revert title color to #8B0000 */
+            font-family: 'Nosifer', sans-serif; /* Apply Nosifer font */
+            text-shadow: 2px 2px 4px #000000; /* Add shadow for depth */
+            position: relative;
+            text-align: center; /* Center the title */
+            animation: creepyGlow 3s infinite alternate; /* Apply creepyGlow animation */
+        }
+    </style>
 </head>
 <body>
     <div class="loading-container enter-transition" id="loadingScreen">
@@ -29,6 +120,7 @@
                 <a href="holyfive.html">
                     <img src="logohftop.png" alt="LogoHF" width="128" height="128" loading="lazy">
                 </a>
+                <h1 style="text-align: center; width: 100%;">HOLY FIVE</h1> <!-- Add title here -->
                 <ul class="nav-menu">
                     <li><a href="about.html">O nas</a></li>
                     <li><a href="zawodnicy.html">Zawodnicy</a></li>
@@ -41,8 +133,70 @@
         </div>
         
         <main>
+            <h1 class="title" style="margin-top: 20px;">HOLY FIVE</h1> <!-- Centered title -->
             <div class="page-content">
-                kiewra cwel
+                <div class="profile">
+                    <div class="section-left">
+                        <h3>Mateusz "Kokos" Brzozowski</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Nikodem "N3xus" Boniecki</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Gryzak</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="section-central">
+                        <h3>Arkadiusz "Mrozon" Gajowiak</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Mikołaj "Mikokap" Kapciak</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Bolgy</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="section-right">
+                        <h3>Adrian "Jezus" Grudziński</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Adam " Verten" Koziński</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <h3>Bartosz "Opi" Opiela</h3>
+                        <div class="icons">
+                            <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>  
+                </div>      
             </div>
         </main>
         
@@ -76,3 +230,4 @@
     <script src="holyfive.js"></script>
 </body>
 </html>
+
