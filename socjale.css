@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'BloodCrow';
+    src: url('path/to/bloodcrow.ttf') format('truetype');
+}
+
+@keyframes mysteriousReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shadowCreep {
+    0% {
+        text-shadow: 2px 2px 4px #000000;
+    }
+    50% {
+        text-shadow: 4px 4px 8px #000000;
+    }
+    100% {
+        text-shadow: 6px 6px 12px #000000;
+    }
+}
+
+@keyframes creepyGlow {
+    0% {
+        text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000, 0 0 24px #ff0000, 0 0 30px #ff0000;
+    }
+    100% {
+        text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+    }
+}
+
+body {
+    background-color: #121212; 
+    color: #ffffff; 
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 250px); /* Adjust height to account for footer */
+    align-items: flex-start;
+    margin-top: 50px; /* Add margin between header and main */
+    margin-bottom: 50px; /* Add margin between main and footer */
+}
+
+.section-left, .section-central, .section-right {
+    flex: 1; /* Distribute columns evenly */
+    text-align: center;
+}
+
+.profile h3 {
+    font-size: 2em; /* Revert to previous font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 1em; /* Add spacing between elements */
+    color: #ff3131; /* Change nickname color to #ff3131 */
+    font-family: 'Bebas Neue', 'Tektur', sans-serif; /* Apply Bebas Neue and Tektur fonts */
+    position: relative;
+    text-shadow: 2px 2px 4px #000000; /* Add shadow for depth */
+}
+
+.profile .icons i {
+    font-size: 1.5em; /* Increase icon size by 0.5 times */
+}
+
+footer.footer {
+    margin-top: -150px; /* Ensure footer is visible */
+}
+
+h1.title {
+    font-size: 9em; /* Increase title size by 1.5 times again */
+    color: #8B0000; /* Revert title color to #8B0000 */
+    font-family: 'Nosifer', sans-serif; /* Apply Nosifer font */
+    text-shadow: 2px 2px 4px #000000; /* Add shadow for depth */
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+}
