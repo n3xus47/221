@@ -1,0 +1,554 @@
+@font-face {
+    font-family: 'BloodCrow';
+    src: url('path/to/bloodcrow.ttf') format('truetype');
+}
+
+@keyframes mysteriousReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shadowCreep {
+    0% {
+        text-shadow: 2px 2px 4px #000000;
+    }
+    50% {
+        text-shadow: 4px 4px 8px #000000;
+    }
+    100% {
+        text-shadow: 6px 6px 12px #000000;
+    }
+}
+
+@keyframes creepyGlow {
+    0% {
+        text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000, 0 0 18px #ff0000, 0 0 24px #ff0000, 0 0 30px #ff0000;
+    }
+    100% {
+        text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000, 0 0 9px #ff0000, 0 0 12px #ff0000, 0 0 15px #ff0000;
+    }
+}
+
+body {
+    background-color: #121212; 
+    color: #ffffff; 
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Satoshi', sans-serif;
+}
+
+main * {
+    font-family: 'Satoshi', sans-serif;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 250px); /* Adjust height to account for footer */
+    align-items: flex-start;
+    margin-top: 50px; /* Add margin between header and main */
+    margin-bottom: 50px; /* Add margin between main and footer */
+}
+
+.section-left {
+    flex: 1; /* Distribute columns evenly */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 8%; /* Zmiana z 10% na 8% */
+}
+
+.section-central {
+    flex: 1; /* Distribute columns evenly */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 6%; /* Zmiana z 5% na 6% */
+    padding-right: 6%; /* Zmiana z 5% na 6% */
+}
+
+.section-right {
+    flex: 1; /* Distribute columns evenly */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 8%; /* Zmiana z 10% na 8% */
+}
+
+/* Kontener danych gracza */
+.player-container {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Nowy układ wyrównujący dane w kolumnach */
+.player-info-row {
+    display: grid;
+    grid-template-columns: 120px auto 120px; /* Szerokości kolumn: imię, nick, nazwisko */
+    grid-gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Style dla imienia - wyrównanie do prawej */
+.first-name {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: right;
+    justify-self: end;
+}
+
+/* Style dla nicka - wyrównanie do środka */
+.nickname {
+    font-family: 'Nosifer', sans-serif;
+    color: #ff3131;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                 0 0 10px rgba(255, 0, 0, 0.9),
+                 0 0 20px rgba(255, 0, 0, 0.9),
+                 0 0 30px rgba(255, 0, 0, 0.9),
+                 0 0 40px rgba(255, 0, 0, 0.9),
+                 0 0 70px rgba(255, 0, 0, 0.7),
+                 0 0 80px rgba(255, 0, 0, 0.6);
+    font-size: 1.8rem;
+    margin: 0;
+    position: relative;
+    overflow: visible;
+    transition: color 0.3s, text-shadow 0.3s;
+    border-radius: 15px;
+    padding: 0 10px;
+    animation: ultra-glow 1.5s infinite alternate;
+    text-align: center;
+    justify-self: center;
+}
+
+/* Style dla nazwiska - wyrównanie do lewej */
+.last-name {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    justify-self: start;
+}
+
+/* Ikony social media wyśrodkowane za pomocą flexboxa */
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 5px;
+    justify-content: center;
+    width: 100%;
+}
+
+.social-icon {
+    color: #cccccc;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.social-icon.youtube:hover {
+    color: #ff0000;
+}
+
+.social-icon.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-icon.instagram:hover {
+    color: #e1306c;
+}
+
+/* Usuwam stare styles dla nicków, które powodują konflikt */
+/* 
+.profile h3 {
+    font-size: 2em;
+    font-weight: bold; 
+    margin-bottom: 1em;
+    color: #ff3131;
+    font-family: 'Bebas Neue', 'Tektur', sans-serif;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+}
+*/
+
+.profile .icons i {
+    font-size: 1.5em; /* Increase icon size by 0.5 times */
+}
+
+footer.footer {
+    margin-top: -150px; /* Ensure footer is visible */
+}
+
+h1.title {
+    font-size: 9em; 
+    color: #8B0000; 
+    font-family: 'Nosifer', sans-serif; 
+    text-shadow: 2px 2px 4px #000000, 
+                 0 0 20px rgba(139, 0, 0, 0.9),
+                 0 0 40px rgba(139, 0, 0, 0.8),
+                 0 0 60px rgba(139, 0, 0, 0.7),
+                 0 0 80px rgba(139, 0, 0, 0.6),
+                 0 0 100px rgba(139, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    animation: title-glow 2s infinite alternate;
+}
+
+@keyframes title-glow {
+    0% {
+        text-shadow: 2px 2px 4px #000000, 
+                     0 0 20px rgba(139, 0, 0, 0.9),
+                     0 0 40px rgba(139, 0, 0, 0.8),
+                     0 0 60px rgba(139, 0, 0, 0.7),
+                     0 0 80px rgba(139, 0, 0, 0.6);
+    }
+    100% {
+        text-shadow: 2px 2px 4px #000000, 
+                     0 0 30px rgba(139, 0, 0, 1),
+                     0 0 60px rgba(139, 0, 0, 0.9),
+                     0 0 90px rgba(139, 0, 0, 0.8),
+                     0 0 120px rgba(139, 0, 0, 0.7),
+                     0 0 150px rgba(139, 0, 0, 0.6);
+    }
+}
+
+/* Style dla kontenera informacji o graczu */
+.player-info {
+    margin-bottom: 1rem;
+}
+
+/* Style dla nicków */
+.nickname {
+    font-family: 'Nosifer', sans-serif;
+    color: #ff3131;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                 0 0 10px rgba(255, 0, 0, 0.9),
+                 0 0 20px rgba(255, 0, 0, 0.9),
+                 0 0 30px rgba(255, 0, 0, 0.9),
+                 0 0 40px rgba(255, 0, 0, 0.9),
+                 0 0 70px rgba(255, 0, 0, 0.7),
+                 0 0 80px rgba(255, 0, 0, 0.6);
+    font-size: 1.8rem;
+    margin: 0.5rem 0 0;
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    transition: color 0.3s, text-shadow 0.3s;
+    border-radius: 15px;
+    padding: 0 10px;
+    animation: ultra-glow 1.5s infinite alternate;
+}
+
+/* Styl dla pierwszej litery nicku z mocniejszym glow */
+.nickname .first-letter {
+    font-family: 'Nosifer', sans-serif;
+    font-size: 1.2em;
+    vertical-align: baseline;
+    position: relative;
+    animation: mega-glow 1.5s infinite alternate;
+}
+
+.nickname:hover {
+    color: #ff5151;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 0 0 15px rgba(255, 0, 0, 0.9),
+                 0 0 30px rgba(255, 0, 0, 0.9),
+                 0 0 50px rgba(255, 0, 0, 0.9),
+                 0 0 75px rgba(255, 0, 0, 0.9),
+                 0 0 100px rgba(255, 0, 0, 0.7),
+                 0 0 125px rgba(255, 0, 0, 0.5);
+}
+
+/* Nowe animacje dla mocnego glow */
+@keyframes ultra-glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 10px rgba(255, 0, 0, 0.9),
+                     0 0 20px rgba(255, 0, 0, 0.9),
+                     0 0 30px rgba(255, 0, 0, 0.8),
+                     0 0 40px rgba(255, 0, 0, 0.7),
+                     0 0 70px rgba(255, 0, 0, 0.6),
+                     0 0 80px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 15px rgba(255, 0, 0, 0.9),
+                     0 0 30px rgba(255, 0, 0, 0.9),
+                     0 0 50px rgba(255, 0, 0, 0.9),
+                     0 0 70px rgba(255, 0, 0, 0.9),
+                     0 0 90px rgba(255, 0, 0, 0.8),
+                     0 0 120px rgba(255, 0, 0, 0.7);
+    }
+}
+
+@keyframes mega-glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 15px rgba(255, 0, 0, 0.9),
+                     0 0 30px rgba(255, 0, 0, 0.9),
+                     0 0 45px rgba(255, 0, 0, 0.8),
+                     0 0 60px rgba(255, 0, 0, 0.7),
+                     0 0 85px rgba(255, 0, 0, 0.6),
+                     0 0 100px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 20px rgba(255, 0, 0, 1),
+                     0 0 40px rgba(255, 0, 0, 1),
+                     0 0 60px rgba(255, 0, 0, 0.9),
+                     0 0 80px rgba(255, 0, 0, 0.9),
+                     0 0 100px rgba(255, 0, 0, 0.8),
+                     0 0 140px rgba(255, 0, 0, 0.7);
+    }
+}
+
+/* Poprawiona animacja glitch z mocniejszym glow */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 10px rgba(255, 0, 0, 0.9),
+                     0 0 20px rgba(255, 0, 0, 0.8),
+                     0 0 40px rgba(255, 0, 0, 0.7);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        text-shadow: -2px -2px 0 rgba(255, 0, 0, 1), 
+                     2px 2px 0 rgba(0, 255, 255, 1),
+                     0 0 20px rgba(255, 0, 0, 1),
+                     0 0 40px rgba(255, 0, 0, 0.8),
+                     0 0 80px rgba(255, 0, 0, 0.6);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        text-shadow: 2px -2px 0 rgba(255, 0, 0, 1), 
+                    -2px 2px 0 rgba(0, 255, 255, 1),
+                     0 0 20px rgba(255, 0, 0, 1),
+                     0 0 40px rgba(255, 0, 0, 0.8),
+                     0 0 80px rgba(255, 0, 0, 0.6);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        text-shadow: 2px 2px 0 rgba(255, 0, 0, 1), 
+                    -2px -2px 0 rgba(0, 255, 255, 1),
+                     0 0 20px rgba(255, 0, 0, 1),
+                     0 0 40px rgba(255, 0, 0, 0.8),
+                     0 0 80px rgba(255, 0, 0, 0.6);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        text-shadow: -2px 2px 0 rgba(255, 0, 0, 1), 
+                     2px -2px 0 rgba(0, 255, 255, 1),
+                     0 0 20px rgba(255, 0, 0, 1),
+                     0 0 40px rgba(255, 0, 0, 0.8),
+                     0 0 80px rgba(255, 0, 0, 0.6);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 
+                     0 0 10px rgba(255, 0, 0, 0.9),
+                     0 0 20px rgba(255, 0, 0, 0.8),
+                     0 0 40px rgba(255, 0, 0, 0.7);
+    }
+}
+
+/* Style dla prawdziwych imion i nazwisk */
+.real-name {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #cccccc;
+    font-size: 1rem;
+    margin: 0.2rem 0 0.8rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Efekt animacji przy najechaniu - usuwam efekt tła */
+.nickname::before {
+    display: none;
+}
+
+.nickname:hover::before {
+    width: 0;
+}
+
+/* Podświetlenie tła przy hover - usuwam */
+.nickname::after {
+    display: none;
+}
+
+.nickname:hover::after {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Kropla krwi pod nickiem */
+.nickname .blood-drop {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ff3131;
+    border-radius: 50% 50% 50% 0;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    opacity: 0;
+    animation: blood-drip 4s ease-in infinite;
+}
+
+/* Dodatkowy efekt dla nicków przy najechaniu */
+.nickname.hover-effect {
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes drip {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* Style dla kropli krwi */
+.blood-drop {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #ff3131;
+    border-radius: 50% 50% 50% 0;
+    bottom: -15px;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: blood-drip 4s ease-in infinite;
+}
+
+@keyframes blood-drip {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px) rotate(45deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateY(20px) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px) rotate(45deg);
+    }
+}
+
+/* Efekt glitcha dla nicków */
+.glitch-effect {
+    animation: glitch 0.3s infinite;
+    position: relative;
+}
+
+/* Dodatkowy efekt glitcha dla pierwszej litery */
+.glitch-effect .first-letter {
+    animation: glitch-letter 0.3s infinite;
+}
+
+@keyframes glitch-letter {
+    0% {
+        transform: translate(0);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+        text-shadow: -3px -3px 0 rgba(255, 0, 0, 0.7), 3px 3px 0 rgba(0, 255, 255, 0.7);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+        text-shadow: 3px -3px 0 rgba(255, 0, 0, 0.7), -3px 3px 0 rgba(0, 255, 255, 0.7);
+    }
+    60% {
+        transform: translate(3px, 3px);
+        text-shadow: 3px 3px 0 rgba(255, 0, 0, 0.7), -3px -3px 0 rgba(0, 255, 255, 0.7);
+    }
+    80% {
+        transform: translate(3px, -3px);
+        text-shadow: -3px 3px 0 rgba(255, 0, 0, 0.7), 3px -3px 0 rgba(0, 255, 255, 0.7);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+}
+
+/* Dodatkowy efekt czystej cyfrowości - usuwam tło */
+.glitch-effect::before {
+    display: none;
+}
+
+.glitch-effect::after {
+    display: none;
+}
+
+/* Style dla footera z tą samą czcionką jak w headerze */
+.footer-menu li a, 
+.footer-menu li a[data-value],
+.copyright,
+.footer a {
+    font-family: 'Hoover-Variable';
+    letter-spacing: 1px;
+}
