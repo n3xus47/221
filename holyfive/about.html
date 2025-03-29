@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Strona stworzona przez N.Bonieckiego i M.Brzozowskiego. Wszelkie prawa zastrzeżone">
+    <link rel="stylesheet" href="./holyfive.css">
+    <link rel="icon" href="holyfive.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Nothing+You+Could+Do&family=Reenie+Beanie&family=Trade+Winds&family=Vujahday+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=My+Soul&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>O nas</title>    
+    <style>
+        /* Removed typing animation styles */
+        #typewriter {
+            font-size: 72px; /* Increased size by an additional 1.0x (54px * 1.0) */
+            text-align: center;
+            white-space: nowrap; /* Ensure the text stays on one line */
+            font-family: 'Great Vibes', cursive; /* Apply Great Vibes font */
+            bottom: 30px; /* Move further downward (was 40px) */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .page-content div.cytat-druzyny {
+            bottom: 110px; /* Move slightly upward (was 100px) */
+        }
+
+        .page-content div {
+            white-space: nowrap; /* Ensure all text stays on one line */
+        }
+
+        main {
+            background-color: #121212; /* Restore the original background color */
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container enter-transition" id="loadingScreen">
+        <div class="loading-logo">
+            <img src="hflogo5.png" alt="LogoHF">
+        </div>
+        <div class="loading-label"><span class="blood-text">LOADING</span><span class="blood-dot">.</span><span class="blood-dot">.</span><span class="blood-dot">.</span></div>
+    </div>
+    
+    <div class="content hidden" id="pageContent">
+        <div class="top-header">       
+            <header class="header">
+                <a href="holyfive.html">
+                    <img src="logohftop.png" alt="LogoHF" width="128" height="128" loading="lazy">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="about.html" data-value="O nas">O nas</a></li>
+                    <li><a href="zawodnicy.html" data-value="Zawodnicy">Zawodnicy</a></li>
+                    <li><a href="socjale.html" data-value="Socjale">Socjale</a></li>
+                    <li><a href="akademia.html" data-value="Akademia">Akademia</a></li>
+                    <li><a href="aktualnosci.html" data-value="Aktualności">Aktualności</a></li>
+                    <li><a href="https://ko-fi.com/221support" target="_blank" data-value="Wesprzyj">Wesprzyj</a></li>
+                </ul>
+            </header>
+        </div>
+        
+        <main>
+            <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 40.5px; font-weight: bold; font-family: 'Bebas Neue', sans-serif; text-align: center; color: white;">
+                O Holy Five
+                <div style="margin-top: 5px; height: 2px; background-color: white; width: 80%; margin-left: auto; margin-right: auto;"></div>
+            </div>
+            <div style="position: absolute; top: 80px; left: 50%; transform: translateX(-50%); font-size: 20px; font-weight: normal; color: white; text-align: center; width: 80%;">
+                Korzenie Holy Five sięgają 2024 roku, kiedy to zespół został założony przez grupę zapaleńców, którzy pragnęli stworzyć coś wyjątkowego w świecie e-sportu. Nasza misja to nie tylko rywalizacja, ale także budowanie społeczności, która wspiera się nawzajem i dąży do doskonałości. Holy Five to nie tylko drużyna, to rodzina.
+            </div>
+            <div style="position: absolute; top: 200px; left: 50%; transform: translateX(-50%); font-size: 40.5px; font-weight: bold; font-family: 'Bebas Neue', sans-serif; text-align: center; color: white;">
+                Osiągnięcia drużyny Holy Five
+                <div style="margin-top: 5px; height: 2px; background-color: white; width: 80%; margin-left: auto; margin-right: auto;"></div>
+            </div>
+            <div style="position: absolute; top: 260px; left: 50%; transform: translateX(-50%); font-size: 20px; font-weight: normal; text-align: center; color: white;">
+                Brak sad
+            </div>
+            <div class="page-content" style="position: relative; display: flex; justify-content: center; align-items: center; height: calc(100vh - 300px); font-size: 36px; font-weight: bold; color: white;">
+                <div class="cytat-druzyny" style="position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%); font-size: 48px; font-weight: bold; text-align: center; font-family: 'Bebas Neue', sans-serif; white-space: nowrap; color: white;">
+                    Cytat Drużyny
+                </div>
+                <div id="typewriter">
+                    <!-- Static quote content can appear here -->
+                </div>
+            </div>
+            <div class="social-icons" style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 10px; z-index: 10; font-size: 1em;">
+                <a href="https://youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" class="social-icon instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitch.tv" class="social-icon twitch" target="_blank"><i class="fab fa-twitch"></i></a>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="left-footer-section">
+                <div class="logo-footer">  
+                    <img src="hflogo5.png" alt="LogoHF" width="100" height="100" loading="lazy" class="white-logo">
+                </div>    
+                <div class="social-icons">
+                    <a href="youtube.com" class="social-icon youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="twitch.tv" class="social-icon twitch" target="_blank"><i class="fab fa-twitch"></i></a>
+                    <a href="discord.com" class="social-icon discord" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="x.com" class="social-icon twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <nav class="right-footer-section">
+                <video id="hfhw" class="footer-video" muted playsinline width="100%" height="100%" loop>
+                    <source src="hfhw.mp4" type="video/mp4">
+                </video>
+                <div class="footer-separator"></div>
+                <ul class="footer-menu">
+                    <li><a href="about.html" data-value="O nas">O nas</a></li>
+                    <li><a href="mailto:official221team@gmail.com" data-value="Kontakt">Kontakt</a></li>
+                    <li><a href="secret.html" data-value="???">???</a></li>
+                </ul>    
+            </nav>
+            <div class="copyright">221. All Rights Reserved. © 2025</div>
+        </footer>
+    </div>
+    
+    
+    <script src="holyfive.js"></script>
+    <script>
+        const phrases = [
+            "Bóg Honor Ojczyzna",
+            "Kiewra To Cwel",
+            "Razem jesteśmy święci, osobno tylko ludzie",
+            "Niebo to nasz limit, a pięć to nasza liczba",
+            "Nawet archanioły uczą się od nas gry zespołowej"
+        ];
+
+        function getRandomPhrase() {
+            const lastPhraseIndex = localStorage.getItem("lastPhraseIndex") || -1;
+            let newPhraseIndex;
+
+            do {
+                newPhraseIndex = Math.floor(Math.random() * phrases.length);
+            } while (newPhraseIndex == lastPhraseIndex);
+
+            localStorage.setItem("lastPhraseIndex", newPhraseIndex);
+            return phrases[newPhraseIndex];
+        }
+
+        function displayRandomQuote() {
+            const typewriterElement = document.getElementById('typewriter');
+            const randomPhrase = getRandomPhrase();
+            typewriterElement.textContent = randomPhrase;
+        }
+
+        // Display a random quote on page load
+        window.onload = displayRandomQuote;
+    </script>
+</body>
+</html>
