@@ -92,6 +92,9 @@ main {
     position: relative;
     white-space: nowrap;
     transition: opacity 0.3s ease; /* Dodaję płynne przejście dla efektu zanikania */
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
 }
 
 /* Kontener dla karty zawodnika */
@@ -613,6 +616,11 @@ main {
     .modal-title {
         font-size: 1.8rem;
     }
+    
+    .corner-element {
+        width: 120px !important;
+        height: 60px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -677,6 +685,11 @@ main {
     
     .modal-title {
         font-size: 1.5rem;
+    }
+    
+    .corner-element {
+        width: 80px !important;
+        height: 40px !important;
     }
 }
 
@@ -799,4 +812,13 @@ main {
     pointer-events: auto !important; /* Wymuś klikalność */
     position: relative; /* Kontekst dla z-index */
     z-index: 100 !important; /* Wysoki priorytet warstwy */
+}
+
+/* Style dla elementów narożnych */
+.corner-element {
+    transition: opacity 0.3s ease;
+}
+
+.corner-element.hidden {
+    opacity: 0;
 }
