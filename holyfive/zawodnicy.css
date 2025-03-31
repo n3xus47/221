@@ -3,13 +3,20 @@ body {
     font-family: 'Satoshi', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    /* background-color: #121212; Usunięto kolor tła */
     color: #e0e0e0;
     overflow-x: hidden;
-    height: 500vh; /* Zwiększam wysokość z 450vh na 500vh, aby zapewnić więcej miejsca */
+    height: 400vh; /* Zwiększam wysokość strony, aby pomieścić dłuższą animację sekwencyjną */
     position: relative;
     display: flex;
     flex-direction: column;
+
+    /* Dodano style dla tła obrazkowego */
+    background-image: url('tlo3.jpg');
+    background-position: center center; /* Centrowanie */
+    background-repeat: no-repeat; /* Bez powtarzania */
+    background-size: cover; /* Pokrycie całego obszaru */
+    background-attachment: fixed; /* Stałe tło przy przewijaniu */
 }
 
 body::before {
@@ -30,7 +37,7 @@ body::before {
 /* Kontener dla głównego ekranu */
 .content {
     position: relative;
-    min-height: 500vh; /* Zwiększam wysokość z 450vh na 500vh, aby zapewnić więcej miejsca */
+    min-height: 400vh; /* Dostosowanie wysokości */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Dodaję, aby footer znalazł się na dole */
@@ -40,12 +47,12 @@ body::before {
 /* Dodaję styl dla elementu spacer */
 .spacer {
     flex-grow: 1; /* Element będzie się rozciągał, aby wypełnić dostępną przestrzeń */
-    min-height: 250vh; /* Zwiększam wysokość z 225vh na 250vh, aby zapewnić więcej miejsca */
+    min-height: 250vh; /* Zwiększam wysokość dla sekwencyjnej animacji */
 }
 
 /* Element odstępu między headerem a main */
 .header-main-spacing {
-    height: 50px; /* Wysokość odstępu */
+    height: 80px; /* Zwiększam wysokość odstępu */
     width: 100%;
     background-color: transparent; /* Ustawiam jako przezroczysty */
 }
@@ -62,21 +69,23 @@ main {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    height: 100%;
     height: calc(100vh - 128px); /* Wysokość widoku minus wysokość headera */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 128px; /* Wysokość headera */
+    position: sticky; /* Utrzymujemy pozycję sticky */
+    top: 132px; /* Zachowuję tę samą wysokość, co header */
     z-index: 25; /* Zwiększam z-index, aby main był nad footerem */
-    margin-bottom: 200px; /* Dodaję margines na dole, aby zapewnić odpowiedni odstęp od footera */
+    margin-bottom: 200px; /* Zwiększam margines na dole */
+    transition: transform 0.5s ease; /* Dodaję płynne przejście dla transformacji */
 }
 
 .section-title {
     text-align: center;
     font-size: 10rem;
-    margin: 40px 0;
+    margin: 100px 0 60px; /* Zwiększam margines górny, aby tytuł był niżej */
     color: white;
     font-family: 'Racing Sans One', sans-serif;
     text-transform: uppercase;
@@ -88,40 +97,42 @@ main {
 /* Kontener dla karty zawodnika */
 .player-container {
     position: absolute;
-    width: 450px;
-    height: 580px; /* Dodaję konkretną wysokość dla wszystkich kontenerów */
+    width: 480px;
+    height: 620px;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    transform-origin: center center; /* Dodaję punkt odniesienia transformacji */
+    transform-origin: center center;
+    will-change: transform, opacity; /* Dodaję wsparcie dla optymalizacji animacji */
+    top: 60px; /* Dodaję właściwość top, aby karty zaczynały się niżej */
 }
 
 /* Style z-index dla kart zawodników */
 #playerCard {
-    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+    z-index: 20; /* Najwyższy */
 }
 
 /* Specyficzne style dla karty nr 2 */
 #playerCard2 {
-    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+    z-index: 19;
 }
 
 /* Specyficzne styles dla karty nr 3 */
 #playerCard3 {
-    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+    z-index: 18;
 }
 
 /* Specyficzne styles dla karty nr 4 */
 #playerCard4 {
-    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+    z-index: 17;
 }
 
 /* Specyficzne styles dla karty nr 5 */
 #playerCard5 {
-    z-index: 20; /* Zwiększam z-index dla wszystkich kart z 10 na 20 */
+    z-index: 16; /* Najniższy */
 }
 
 /* Style dla interakcji z kartami - hover */
@@ -156,18 +167,62 @@ main {
 
 /* Karta zawodnika */
 .player-card {
-    width: 450px; /* Zwiększam szerokość karty z 400px na 450px */
+    width: 480px;
     background-color: #20242a;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    transform-style: preserve-3d; /* Dodaję wsparcie dla efektu 3D */
+    perspective: 1000px; /* Dodaję perspektywę dla efektu 3D */
 }
 
 .player-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.player-card::after {
+    background: linear-gradient(
+        transparent,
+        #ff3131, /* Zmieniono kolor na czerwony */
+        transparent
+    );
+    width: 3px; /* Zwiększono grubość z 1px */
+    height: 80px;
+    position: absolute;
+    left: -1px;
+    top: 65%;
+    content: "";
+    opacity: 0;
+    transition: top 600ms ease, opacity 600ms ease; /* Dodano transition */
+}
+
+.player-card:hover::after {
+    top: 25%;
+    opacity: 1;
+}
+
+.player-card::before {
+    background: linear-gradient(
+        transparent,
+        #ff3131,
+        transparent
+    );
+    width: 3px;
+    height: 80px;
+    position: absolute;
+    right: -1px; /* Zmieniono na prawą stronę */
+    top: 25%; /* Początkowa pozycja */
+    content: "";
+    opacity: 0;
+    transition: top 600ms ease, opacity 600ms ease; /* Dodano transition */
+}
+
+.player-card:hover::before {
+    top: 65%; /* Końcowa pozycja */
+    opacity: 1;
 }
 
 .shiny-bar {
@@ -176,10 +231,10 @@ main {
     left: 0;
     width: 100%;
     height: 10px; /* Zwiększam wysokość paska z 8px na 10px */
-    /* Kolory w pasku gradientowym: #ff3131 (czerwony), #6A7EFC (niebieski) - kolory marki */
-    background: linear-gradient(90deg, #ff3131, #6A7EFC, #ff3131);
+    /* Kolory w pasku gradientowym: #ff3131 (czerwony), #ffffff (biały) */
+    background: linear-gradient(90deg, #ff3131, #ffffff, #ff3131);
     background-size: 200% 100%;
-    animation: shimmer 3s infinite linear;
+    animation: shimmer 4s infinite linear;
 }
 
 @keyframes shimmer {
@@ -191,8 +246,8 @@ main {
 .card-inner {
     padding: 25px;
     box-sizing: border-box;
-    min-height: 480px;
-    height: 480px;
+    min-height: 510px; /* Zwiększono proporcjonalnie z 480px */
+    height: 510px; /* Zwiększono proporcjonalnie z 480px */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -206,8 +261,8 @@ main {
 #playerCard2 .card-inner,
 #playerCard5 .card-inner {
     padding: 25px;
-    min-height: 480px;
-    height: 480px;
+    min-height: 510px; /* Zwiększono proporcjonalnie z 480px */
+    height: 510px; /* Zwiększono proporcjonalnie z 480px */
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -218,7 +273,7 @@ main {
 
 /* Dopasowanie elementów wewnątrz .card-inner */
 .player-image {
-    height: 350px; /* Zwiększam wysokość obrazu z 300px na 350px */
+    height: 375px; /* Zwiększono proporcjonalnie z 350px */
     overflow: hidden;
     border-radius: 10px; /* Zwiększam zaokrąglenie z 8px na 10px */
     margin-bottom: 25px; /* Zwiększam odstęp z 20px na 25px */
@@ -278,13 +333,13 @@ main {
 
 .player-text h2 {
     margin: 0 0 12px 0;
-    font-size: 1.4rem; /* Zmniejszona czcionka z 1.8rem na 1.4rem */
+    font-size: 1.4rem;
     font-weight: 700;
     color: #e0e0e0;
     width: 100%;
-    white-space: nowrap; /* Tekst zawsze w jednej linii */
-    overflow: hidden; /* Ukryj tekst, który się nie mieści */
-    text-overflow: ellipsis; /* Dodaj kropki na końcu tekstu, który się nie mieści */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Specyficzne style dla h2 we wszystkich kartach */
@@ -311,7 +366,7 @@ main {
 #playerCard3 .social-link:hover,
 #playerCard4 .social-link:hover,
 #playerCard5 .social-link:hover {
-    color: #ff3131; /* Czerwony kolor z marki */
+    color: #dd2a7b; /* Czerwony kolor z marki */
 }
 
 .social-link {
@@ -319,13 +374,13 @@ main {
     align-items: center;
     color: #aaa;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Hoover-Variable';
 }
 
 .social-link:hover {
-    color: #ff3131; /* Czerwony kolor z marki */
+    color: #dd2a7b;
 }
 
 .social-link i {
@@ -409,7 +464,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin: 60px auto;
+    margin: 80px auto 0; /* Zwiększam margines górny */
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 40;
@@ -504,6 +559,7 @@ main {
 @media (max-width: 768px) {
     .section-title {
         font-size: 7rem;
+        margin: 80px 0 40px; /* Dostosowanie marginesów dla mniejszych ekranów */
     }
     
     .holy-five-title {
@@ -517,27 +573,27 @@ main {
     }
     
     .player-card {
-        width: 380px; /* Zwiększam rozmiar dla tablet (z 350px na 380px) */
+        width: 410px; /* Zwiększono z 380px */
     }
     
     .player-image {
-        height: 280px; /* Dostosowuję wysokość obrazu (z 250px na 280px) */
+        height: 300px; /* Zwiększono proporcjonalnie z 280px */
     }
     
     .player-container {
-        width: 380px; /* Dopasowanie do szerokości karty na tabletach */
-        height: 510px; /* Dopasowanie wysokości na tabletach */
+        width: 410px; /* Zwiększono z 380px */
+        height: 550px; /* Zwiększono proporcjonalnie z 510px */
     }
     
     .card-inner {
-        min-height: 410px; /* Dostosowanie minimalnej wysokości dla tabletów */
-        height: 410px; /* Dostosowanie stałej wysokości dla tabletów */
+        min-height: 440px; /* Zwiększono proporcjonalnie z 410px */
+        height: 440px; /* Zwiększono proporcjonalnie z 410px */
     }
     
     #playerCard3 .card-inner,
     #playerCard4 .card-inner {
-        min-height: 410px;
-        height: 410px;
+        min-height: 440px; /* Zwiększono proporcjonalnie z 410px */
+        height: 440px; /* Zwiększono proporcjonalnie z 410px */
     }
     
     .action-button {
@@ -546,7 +602,7 @@ main {
     }
     
     #actionButtons {
-        bottom: 30px !important;
+        margin-top: 40px;
     }
     
     .modal-content {
@@ -568,6 +624,7 @@ main {
     
     .section-title {
         font-size: 5rem;
+        margin: 60px 0 30px; /* Dostosowanie marginesów dla najmniejszych ekranów */
     }
     
     .holy-five-title {
@@ -576,11 +633,11 @@ main {
     }
     
     .player-card {
-        width: 320px; /* Zwiększam rozmiar dla telefonu (z 300px na 320px) */
+        width: 340px; /* Zwiększono z 320px */
     }
     
     .player-image {
-        height: 220px; /* Dostosowuję wysokość obrazu (z 200px na 220px) */
+        height: 235px; /* Zwiększono proporcjonalnie z 220px */
     }
     
     .player-text h2 {
@@ -588,19 +645,19 @@ main {
     }
     
     .player-container {
-        width: 320px; /* Dopasowanie do szerokości karty na telefonach */
-        height: 450px; /* Dopasowanie wysokości na telefonach */
+        width: 340px; /* Zwiększono z 320px */
+        height: 480px; /* Zwiększono proporcjonalnie z 450px */
     }
     
     .card-inner {
-        min-height: 350px; /* Dostosowanie minimalnej wysokości dla telefonów */
-        height: 350px; /* Dostosowanie stałej wysokości dla telefonów */
+        min-height: 370px; /* Zwiększono proporcjonalnie z 350px */
+        height: 370px; /* Zwiększono proporcjonalnie z 350px */
     }
     
     #playerCard3 .card-inner,
     #playerCard4 .card-inner {
-        min-height: 350px;
-        height: 350px;
+        min-height: 370px; /* Zwiększono proporcjonalnie z 350px */
+        height: 370px; /* Zwiększono proporcjonalnie z 350px */
     }
     
     .action-button {
@@ -609,8 +666,8 @@ main {
     }
     
     #actionButtons {
-        bottom: 20px !important;
-        gap: 10px !important;
+        margin-top: 30px;
+        gap: 10px;
     }
     
     .modal-content {
@@ -630,12 +687,64 @@ main {
 /* Footer pojawi się po całym body */
 .footer {
     position: relative;
-    margin-top: 0; /* Usuwam margin-top, aby footer pojawiał się naturalnie po zawartości */
+    margin-top: auto;
     z-index: 10; /* Ustawiam niższy z-index niż main */
     background-color: black; /* Pozostawiam tło, aby footer był bardziej widoczny */
     width: 100%;
-    margin-top: auto; /* Dodaję auto, aby footer był na samym dole */
-    font-family: "Hoover-Variable";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+/* Style dla sekcji prawej footera */
+.right-footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Style dla menu w footerze */
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 50%; /* Pełna szerokość */
+}
+
+/* Style dla elementów menu footera */
+.footer-menu li {
+    margin: 0 80px; /* Dodaję duże marginesy poziome */
+}
+
+.footer-menu li a {
+    font-size: 1rem; /* Zwiększam rozmiar czcionki */
+    padding: 5px 15px;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Zapobiega łamaniu tekstu */
+}
+
+/* Ukrywamy wideo w footerze */
+.footer-video {
+    display: none;
+}
+
+/* Ukrywamy separator w footerze */
+.footer-separator {
+    display: none;
+}
+
+/* Style dla copyright */
+.copyright {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
 }
 
 /* Styl dla dużego napisu HOLY FIVE */
@@ -656,7 +765,7 @@ main {
     white-space: nowrap;
     letter-spacing: 4px;
     pointer-events: none;
-    margin: 50px 0;
+    margin: 100px 0 50px; /* Zwiększam górny margines */
     width: 100%;
     text-align: center;
 }
@@ -682,4 +791,12 @@ main {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* --- Poprawka klikalności linków social media --- */
+.player-card .social-link,
+.player-card .social-link i {
+    pointer-events: auto !important; /* Wymuś klikalność */
+    position: relative; /* Kontekst dla z-index */
+    z-index: 100 !important; /* Wysoki priorytet warstwy */
 }
