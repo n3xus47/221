@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const actionButtons = document.getElementById('actionButtons');
     const mainElement = document.querySelector('main');
     const spacerElement = document.querySelector('.spacer');
+    const cornerElements = document.querySelectorAll('.corner-element');
     
     // Elementy modalne
     const teamHistoryBtn = document.getElementById('teamHistoryBtn');
@@ -277,13 +278,20 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollPosition = scrollBreakpoints.maxScroll;
         }
         
-        // Obsługa tytułu "Skład Główny"
+        // Obsługa tytułu "Skład Główny" i narożników
         if (scrollPosition > scrollBreakpoints.titleFadeStart) {
             const titleOpacity = 1 - ((scrollPosition - scrollBreakpoints.titleFadeStart) / 
                                      (scrollBreakpoints.titleFadeEnd - scrollBreakpoints.titleFadeStart));
             sectionTitle.style.opacity = Math.max(0, titleOpacity);
+            // Ustawiamy tę samą przezroczystość dla narożników
+            cornerElements.forEach(corner => {
+                corner.style.opacity = Math.max(0, titleOpacity);
+            });
         } else {
             sectionTitle.style.opacity = 1;
+            cornerElements.forEach(corner => {
+                corner.style.opacity = 1;
+            });
         }
         
         // Zmienna śledząca czy wszystkie karty są na swoich miejscach
