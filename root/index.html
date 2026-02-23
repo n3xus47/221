@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moja strona – GitHub Pages</title>
+  <meta name="description" content="Strona główna projektu hostowanego na GitHub Pages.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .shell {
+      width: 100%;
+      max-width: 960px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.96);
+      box-shadow:
+        0 22px 60px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(148, 163, 184, 0.2);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      backdrop-filter: blur(18px);
+    }
+    .shell-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: linear-gradient(to right, #020617, #0b1220);
+      border-bottom: 1px solid rgba(51, 65, 85, 0.9);
+    }
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+    }
+    .dot.red { background: #f97373; }
+    .dot.amber { background: #facc15; }
+    .dot.green { background: #4ade80; }
+    .title {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .shell-body {
+      padding: 24px 22px 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .shell-body {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    h1 {
+      font-size: clamp(1.8rem, 2.4vw + 1rem, 2.4rem);
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+    h1 span {
+      background: linear-gradient(to right, #38bdf8, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    p {
+      font-size: 0.96rem;
+      color: #e5e7eb;
+      max-width: 34rem;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .hint {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 18px;
+    }
+    .hint code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 2px 6px;
+      border-radius: 5px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      font-size: 0.78rem;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      text-decoration: none;
+      color: #e5e7eb;
+      font-size: 0.86rem;
+      transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 0.96));
+    }
+    .links a:hover {
+      background: radial-gradient(circle at top left, rgba(129, 140, 248, 0.3), rgba(15, 23, 42, 0.98));
+      border-color: rgba(196, 181, 253, 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+    }
+    .links a span.badge {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #9ca3af;
+    }
+    .links a small {
+      font-size: 0.76rem;
+      color: #9ca3af;
+    }
+    .list-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    ul {
+      list-style: none;
+      font-size: 0.86rem;
+      color: #9ca3af;
+    }
+    ul li + li {
+      margin-top: 4px;
+    }
+    ul code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.96);
+      padding: 2px 6px;
+      border-radius: 5px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #e5e7eb;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.22);
+    }
+  </style>
+</head>
+<body>
+  <main class="shell" aria-label="Strona główna projektu">
+    <header class="shell-header">
+      <div class="dots" aria-hidden="true">
+        <div class="dot red"></div>
+        <div class="dot amber"></div>
+        <div class="dot green"></div>
+      </div>
+      <div class="title">GitHub Pages • /index.html</div>
+    </header>
+
+    <section class="shell-body">
+      <div>
+        <div class="pill">
+          <span class="pill-dot" aria-hidden="true"></span>
+          <span>GitHub Pages jest gotowe</span>
+        </div>
+
+        <h1><span>Strona główna projektu</span></h1>
+        <p>
+          To jest podstawowy plik <code>index.html</code>, który będzie startową stroną
+          Twojej witryny na GitHub Pages. Dodaj tu linki do wszystkich innych podstron.
+        </p>
+
+        <p class="hint">
+          Wystarczy, że wrzucisz kolejne pliki HTML do tego repozytorium, a poniżej
+          dodasz do nich odnośniki. Pamiętaj, że nazwy w linkach muszą dokładnie
+          zgadzać się z nazwami plików.
+        </p>
+
+        <nav class="links" aria-label="Lista stron w projekcie">
+          <!--
+            PRZYKŁADOWE LINKI:
+            Skopiuj któryś z nich i zmień nazwę pliku / etykietę.
+          -->
+          <a href="strona1.html">
+            <span>Przykładowa strona 1</span>
+            <span class="badge">strona1.html</span>
+          </a>
+          <a href="strona2.html">
+            <span>Przykładowa strona 2</span>
+            <span class="badge">strona2.html</span>
+          </a>
+          <a href="kontakt.html">
+            <span>Kontakt</span>
+            <span class="badge">kontakt.html</span>
+          </a>
+        </nav>
+
+        <p class="hint">
+          Możesz bezpiecznie usunąć przykładowe linki powyżej i dodać własne.
+        </p>
+      </div>
+
+      <aside aria-label="Instrukcje GitHub Pages">
+        <div class="list-title">Jak z tego korzystać</div>
+        <ul>
+          <li>1. Utwórz kolejne pliki, np. <code>strona1.html</code>, <code>strona2.html</code>.</li>
+          <li>2. Umieść je w tym samym katalogu co <code>index.html</code>.</li>
+          <li>3. W sekcji linków u góry zaktualizuj atrybuty <code>href</code>.</li>
+          <li>4. Zacommituj zmiany i wypchnij je na GitHuba.</li>
+          <li>5. Upewnij się, że w ustawieniach repo wybrany jest branch z plikami.</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
