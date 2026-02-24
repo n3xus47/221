@@ -390,6 +390,49 @@ main {
     margin-right: 5px;
 }
 
+.social-link.faceit-link {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    color: #ffffff;
+    line-height: 1;
+    margin-top: -10px;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-link.faceit-link:hover {
+    color: #ff6a1f;
+    transform: scale(1.08);
+    text-shadow: 0 0 8px rgba(255, 85, 0, 0.75);
+}
+
+.faceit-icon {
+    width: 24px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.faceit-label {
+    display: block;
+    white-space: nowrap;
+    color: currentColor;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-left: 2px;
+}
+
+#playerCard .social-link.faceit-link:hover,
+#playerCard2 .social-link.faceit-link:hover,
+#playerCard3 .social-link.faceit-link:hover,
+#playerCard4 .social-link.faceit-link:hover,
+#playerCard5 .social-link.faceit-link:hover {
+    color: #ff6a1f;
+}
+
 .logo-small {
     width: 60px;
     height: 60px;
@@ -545,6 +588,50 @@ main {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #e0e0e0;
+}
+
+.reserve-player {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.reserve-player:last-child {
+    margin-bottom: 0;
+}
+
+.reserve-avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.reserve-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reserve-content h3 {
+    margin: 0 0 6px 0;
+}
+
+.reserve-stats {
+    display: grid;
+    gap: 3px;
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+}
+
+.reserve-stats strong {
+    color: #ff3131;
+}
+
+.reserve-faceit-link {
+    margin-top: 0;
 }
 
 @keyframes modalAppear {

@@ -16,14 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Elementy modalne
     const teamHistoryBtn = document.getElementById('teamHistoryBtn');
-    const trophiesBtn = document.getElementById('trophiesBtn');
-    const playerStatsBtn = document.getElementById('playerStatsBtn');
     const teamHistoryModal = document.getElementById('teamHistoryModal');
-    const trophiesModal = document.getElementById('trophiesModal');
-    const playerStatsModal = document.getElementById('playerStatsModal');
     const closeHistoryModal = document.getElementById('closeHistoryModal');
-    const closeTrophiesModal = document.getElementById('closeTrophiesModal');
-    const closePlayerStatsModal = document.getElementById('closePlayerStatsModal');
     
     // Ustawienie main jako sticky
     mainElement.style.position = 'sticky';
@@ -224,28 +218,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
     });
     
-    trophiesBtn.addEventListener('click', () => {
-        trophiesModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    });
-    
-    playerStatsBtn.addEventListener('click', () => {
-        playerStatsModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    });
-    
     closeHistoryModal.addEventListener('click', () => {
         teamHistoryModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-    
-    closeTrophiesModal.addEventListener('click', () => {
-        trophiesModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-    
-    closePlayerStatsModal.addEventListener('click', () => {
-        playerStatsModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     });
     
@@ -253,14 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', (event) => {
         if (event.target === teamHistoryModal) {
             teamHistoryModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        if (event.target === trophiesModal) {
-            trophiesModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        if (event.target === playerStatsModal) {
-            playerStatsModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     });

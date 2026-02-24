@@ -137,9 +137,17 @@ body {
   font-family: "Hoover-Variable";
   list-style-type: none;
   z-index: 3;
-  gap: 80px;
-  justify-content: flex-end;
-  display: inline-flex;
+  gap: 48px;
+  justify-content: flex-start;
+  display: flex;
+  flex: 1;
+  margin-left: 36px;
+  padding: 0;
+}
+
+.nav-menu li.external-start {
+  margin-left: 140px;
+  padding-left: 0;
 }
 
 .nav-menu li {
